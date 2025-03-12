@@ -1,0 +1,31 @@
+*
+{
+  margin:0;
+  padding:0;
+  font-family:cavolini;
+}
+
+section
+{
+  padding:50px;
+}
+
+body {
+  direction: rtl;
+  padding-right:20px;
+  scroll-behavior:smooth;
+}
+
+::-webkit-scrollbar
+{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:linear-gradient(to left,white 10px,black 11px,white 1q);
+}
+
+::-webkit-scrollbar-thumb{
+  background:white;
+  border:inset 1px black;
+}

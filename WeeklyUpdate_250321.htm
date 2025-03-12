@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<style>
+
+*
+{
+  margin:0;
+  padding:0;
+}
+
+li {
+margin-left:20px;
+font-size: 12pt;
+}
+
+th, td {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align:left;
+	height:30px;
+	font-size: 12pt;
+	font-weight:Bold;
+	padding-left:3px;
+}
+a{text-decoration:none;color:#3C543C;}
+a:link:   {color:#3C543C;}
+a:visited {color:#3C543C;}
+a:hover   {color:#D6F097;}
+a:active  {color:#D6F097;}
+
+.site-header__logo svg {
+    display: block;
+    width: auto;
+    height: 2rem;
+	color:#3C543C;
+}
+
+table{
+	margin:4px;
+}
+
+table.noborder{
+  border-top: 0px solid white;
+}
+
+td.noborder{
+	border-top: 0px solid white;
+	border-left: 0px solid white;
+	border-bottom: 0px solid white;
+}
+
+.darkGreen {
+  background:#273327;
+  color:Black;
+  font-size: 10pt;
+  color:white;
+}
+
+.lightGrHeader {
+  background:#D7F39D;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.lightGreen {
+  background:#D6F097;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.data {
+  font-weight:normal;
+  font-size: 12pt;
+  height:20px;
+  border-top:0px;
+}
+
+.spacer {
+	height:20px;
+}
+
+font {
+  font-family:Century Gothic;
+}
+
+p {
+	font-weight:normal;
+}
+
+body {
+  padding-right:30px;
+  padding-bottom: 0px;
+  scroll-behavior:smooth;
+}
+
+::-webkit-scrollbar
+{
+  width:20px;
+}
+
+::-webkit-scrollbar-track{
+  background:linear-gradient(to left,white 10px,black 11px,white 1q);
+}
+
+::-webkit-scrollbar-thumb{
+  background:white;
+  border:inset 1px black;
+}
+
+</style>
+
+</head>
+<body>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <th class="darkGreen">Project Name</th>
+	<th class="lightBlue">Digital Services &amp; AI</th>
+	<th class="darkGreen">Line Manager</th>
+	<th class="lightBlue">Matt Daw</th>
+	<th class="darkGreen">Report Date</th>
+	<th class="lightBlue" style="border-right:1px solid black;">21 Mar 2025</th>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 10 Mar - 21 Mar 25</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+ <tr>
+	<td class="data">1</td>
+	<td class="data">GIS - Flood Modelling</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	    <li>Matt Whittle suggest using <a target="_blank" href="https://geopandas.org/en/stable/getting_started/introduction.html">geopandas</a> after identifying potential coordinates in the <a target="_blank" href="file:///C:/Users/Michael.Harley/OneDrive - SLR Consulting/Documents/Downloads/Web animation examples/Web animation examples/TUFLOW raw data example/2d/Kintore_SEN03c_0200R_CC_004.2dm">Kintore_SEN03c_0200R_CC_004.2dm</a> file</li>
+		</ul><br>
+	</td>
+  </tr>
+ <tr>
+    <td class="data">2</td>
+	<td class="data">Power BI</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+		<ul>
+			<li></li>
+		</ul>
+		<br>
+	</td>
+ </tr>
+  <tr>
+	<td class="data">3</td>
+	<td class="data">Carnstone Project</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+		<li>Successfully connected to the server using SSH (ssh -i michaelharley michaelharley@178.79.164.101) <font style="color:white">using password E7nd8U_ZVGDk-k7</font></li>
+		</ul><br>
+	</td>
+  </tr>
+   <tr>
+    <td class="data">4</td>
+	<td class="data">Postcode Distance</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+		<ul>
+			<li>Researched Azure maps and created a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-maps/tutorial-search-location"> quick demo</a>.</li>
+			<li>Found a <a target="_blank" href="https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/maps/maps-route-rest/README.md">maps-route</a> demo and <a target="_blank" href="https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/maps/maps-geolocation-rest/README.md">maps-geolocation</a> demo that we could use</li>
+			<li>Create a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-maps/how-to-dev-guide-js-sdk">demo node.js search app</a> that passes partial address data and returns geo-location coordinates</li>
+		</ul>
+		<br>
+	</td>
+ </tr>
+ <tr>
+	<td class="data">5</td>
+	<td class="data">Other</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li></li>
+	    </ul><br>
+	</td>
+  </tr>
+
+  
+  
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=5 style="text-align:center; border-right:1px solid black;" >Training</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader" width="20%">Task</td>
+	<td class="lightGrHeader" width="20%">Course</td>
+	<td class="lightGrHeader">Date</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+ <tr>
+    <td class="data">1</td>
+	<td class="data"><a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2PjDI">Microsoft Training</a> - on mikeharley79@outlook.com account</td>
+	<td class="data"><a target="_blank" href="https://learn.microsoft.com/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification&WT.mc_id=certposter_poster-wwl">Microsoft Azure Fundamentals</a><br>
+	<a target="_blank" href="https://aka.ms/AZ900-StudyGuide">AZ-900 study guide</a><br>
+	<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-900/practice/assessment?assessmentId=23&assessment-type=practice">AZ-900 practice test</a></td>
+	<td class="data">30 Jan 2025</td>
+	<td class="data" style="border-right:1px solid black;">
+	<ul><li>Continued the training</li>
+	</ul></td>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Work Pending: W/C 24 Mar 2025</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+ <tr>
+    <td class="data">1</td>
+	<td class="data">IT Hardware expenditure analysis</td>
+	<td class="data" style="border-right:1px solid black;">Power BI report based on Excel documents - see Matt Sperryn. On hold. Awaiting data cleanse from John Bucannon</td>
+  </tr>
+  <tr>
+	<td class="data">2</td>
+	<td class="data">H&amp;S Team</td>
+	<td class="data" style="border-right:1px solid black;">Possible work from Health &amp; Safety Team. Existing power BI with links to sharepoint lists. Future requirements pending.</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=6 style="text-align:center; border-right:1px solid black;" >Mikes Performance Objectives</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" width="70px">Start</td>
+	<td class="lightGrHeader" width="70px">End</td>
+	<td class="lightGrHeader">Progress</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+  <tr>
+    <td class="data">1</td>
+	<td class="data">TBA</td>
+	<td class="data"></td>
+	<td class="data"></td>
+	<td class="data"></td>
+	<td class="data" style="border-right:1px solid black">
+		TBA</td>
+  </tr>
+
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <th class="darkBlue">Quick Links</th>
+	<th class="lightBlue"><a target="_blank" href="https://slrgroup.sharepoint.com/sites/DigitalServicesTeam">Digital Services &amp; AI</a><br>
+	<a target="_blank" href="https://myaccount.microsoft.com/">My Account</a> / <a target="_blank" href="https://myapps.microsoft.com/">My Apps</a><br>
+	<a target="_blank" href="https://slrgroup-my.sharepoint.com/">OneDrive</a></th>
+	<th class="lightBlue"><a target="_blank" href="https://slrconsulting.csod.com/samldefault.aspx">The POD (Training)</a><br>
+	<a target="_blank" href="https://fs-1123.cloudforce.com/">The HUB (Annual Leave)</a><br>
+	<a target="_blank" href="https://slrconsulting.deltekenterprise.com/slrconsulting/app/">Vantagepoint (Timesheets)</a></th>
+	<th class="lightBlue">
+	<a target="_blank" href="https://dev.azure.com/slr-consulting/">DevOps</a> / <a target="_blank" href="https://portal.azure.com/">Azure Portal</a><br>
+	<a target="_blank" href="https://make.powerautomate.com/environments/Default-109cec53-a877-42eb-93e8-b9f5c282ba38/home?auth_upn=Michael.Harley@slrconsulting.com&utm_source=office&utm_medium=app_launcher&utm_campaign=office_referrals">Power Automate</a><br>
+	<a target="_blank" href="https://app.powerbi.com/home?experience=power-bi">Power BI</a> </th>
+	<th class="lightBlue" style="border-right:1px solid black;"><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">Response Codes</a><BR>
+	<a target="_blank" href="https://nodejs.org/docs/latest/api/">Node.js</a><br>
+	<a target="_blank" href="https://expressjs.com/">Express</a><br>
+	<a target="_blank" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">gitflow</a></th>
+  </tr>
+</table>
+
+<br>
+
+
+<br><br>kind regards<br><br>
+<b><font style="font-family: Arial;font-size:15pt;color:#3C543C">Mike Harley</font></b><br>
+<font style="font-family: Arial;font-size:11pt;color:#507A57">Developer - Digital Services &amp; AI</font>
+<br><br>
+<a href="#" style="cursor:default;">&#9742;: +44 7779 858032</a><br>
+<a target="_blank" href="mailto:mike.harley@slrconsulting.com">&#9993;: mike.harley@slrconsulting.com</a><br>
+ <a target="_blank" href="https://www.slrconsulting.com">&#127760;:https://www.slrconsulting.com</a><br><br>&nbsp;
+<p style="font-family: Arial;font-size:15pt;">SLR Consulting Limited</p>
+<p style="font-family: Arial;font-size:11pt;">The Barn, Cadhay, Ottery St Mary, Devon, EX11 1QT</p>
+<br>
+
+<a target="_blank" href="https://www.slrconsulting.com" class="site-header__logo">
+<img src="https://nla-production-media.s3.eu-west-2.amazonaws.com/75974/SLR-Logo-%28low-res%29.jpg?v=1712059328" width=180 />
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
