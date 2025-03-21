@@ -152,6 +152,7 @@ body {
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
 	    <li>Matt Whittle suggest using <a target="_blank" href="https://geopandas.org/en/stable/getting_started/introduction.html">geopandas</a> after identifying potential coordinates in the <a target="_blank" href="file:///C:/Users/Michael.Harley/OneDrive - SLR Consulting/Documents/Downloads/Web animation examples/Web animation examples/TUFLOW raw data example/2d/Kintore_SEN03c_0200R_CC_004.2dm">Kintore_SEN03c_0200R_CC_004.2dm</a> file</li>
+		<li>Shared everything I've worked on so far with Shashank Kallakuri</li>
 		</ul><br>
 	</td>
   </tr>
@@ -186,7 +187,14 @@ body {
 			<li>Created a node.js express <a target="_blank" href="https://www.bezkoder.com/node-js-upload-excel-file-database/">demo project</a> to upload excel documents and read data into both mySQL and sqlite databases</li>
 			<li>Created a new project using the technologies above and got the template example imported into the sqlite database</li>
 			<li>Synced the code with a new project in devops called <a target="_blank" href="https://dev.azure.com/slr-consulting/_git/Postcode%20Distance%20Calc?path=%2Fexceluploader%2Freadme.md&_a=preview" >Distance Calc</a></li>
-			
+			<li>Tested routes across countries. Response from Azure maps seems to only record road data.</li>
+			<li>Search API accepts GB, Great Britain, UK and United Kingdom but refuses England</li>
+			<li>Integrated Azure Map search and route into excel import code</li>
+			<li>Got file downloader working folowing the guide <a target="_blank" href="https://www.bezkoder.com/node-js-download-excel-file/"> here</a> but had to duplicate the code as I couldn't work out how to create the file in an endpoint and call the end point from node and publish the download from the parent code.</li>
+			<li>Added the formulas to the cells</li>
+			<li>Link to <a target="_blank" href="https://npm.io/package/exceljs">excel.js</a> and <a target="_blank" href="https://sequelize.org/v5/">sequelize v5</a>
+			<li>Tried to set up socket.io to provide user feedback but couldn't get it working.</li>
+			<li>Set up multiple uploads to process all records and then produce one output.</li>
 		</ul>
 		<br>
 	</td>
@@ -196,7 +204,7 @@ body {
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li></li>
+	  	<li>Updasted the USB blocking workflows to filter only records that haven't had AccessRemoved populated with a date.</li>
 	    </ul><br>
 	</td>
   </tr>
