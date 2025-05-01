@@ -131,7 +131,7 @@ body {
 	<th class="darkGreen">Line Manager</th>
 	<th class="lightBlue">Matt Daw</th>
 	<th class="darkGreen">Report Date</th>
-	<th class="lightBlue" style="border-right:1px solid black;">09 Apr 2025</th>
+	<th class="lightBlue" style="border-right:1px solid black;">07 May 2025</th>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
-    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 24 Mar - 09 Apr 25</td>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 24 Apr 25 - 07 May 25</td>
   </tr>
   <tr>
     <td class="lightGrHeader">No.</td>
@@ -151,31 +151,45 @@ body {
 	<td class="data">GIS - Flood Modelling</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	    <li>Discussed data with Robert Walker. It appears we need more files</li>
-		<li>Rob offfered to help set up QGIS with us</li>
-		<li>Noted the use of British National Grid</li>
-		<li>Explained the data was pixels in rectangle but we couldn't work out the 217 in the array</li>
+	    <li>Discussed with Shashank options to export a raster file like ASCII or FLT from TuFlow</li>
+		<li>Then convert to geoTIFF using GDAL for leaflet</li>
+		<li>Gained further insight into the grid system and explored the prj file to conclude the data in the 2dm file were coordinates that required converting</li>
+		<li>Found the <a target="_blank" href="https://www.google.com/search?q=convert+Airy_1830+to+WGS+84+in+code&sca_esv=9c7ec454ad9eda0c&rlz=1C1GCEA_enGB1144GB1144&sxsrf=AHTn8zrXnS3iLdcUZfDe-HOAu0c73f2YYw%3A1745493911105&ei=lx8KaN6dBuOChbIPrtixkQQ&ved=0ahUKEwiexZ3Ex_CMAxVjQUEAHS5sLEIQ4dUDCBI&uact=5&oq=convert+Airy_1830+to+WGS+84+in+code&gs_lp=Egxnd3Mtd2l6LXNlcnAiI2NvbnZlcnQgQWlyeV8xODMwIHRvIFdHUyA4NCBpbiBjb2RlMggQABiABBiiBDIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIFEAAY7wVIvyBQjRRYtx9wA3gBkAEAmAGKAaABsQaqAQM0LjS4AQPIAQD4AQGYAgugAukGwgIKEAAYsAMY1gQYR8ICBBAjGCfCAgcQIRigARgKwgIEECEYFZgDAIgGAZAGCJIHAzUuNqAH0i-yBwMyLja4B9QG&sclient=gws-wiz-serp"> conversion syntax </a> in Python</li>
+		<li>Researched data in <a target="_blank" href="https://downloads.tuflow.com/_archive/TUFLOW_FV/Manual/TUFLOW_FV_User_Manual_2020.pdf#page=112"> 2dm file </a>to understand the ND and E4Q outputs</li>
+		<li>Wrote a python script to convert the nodes from the 2dm file to coordinates and made a web page to showcase leaflet. The location was correct but the layout was wrong compared to what is loaded in QGIS</li>
+		<li>Rewrote the script to find the centre point of each quadrilateral element (E4Q) based on the associated nodes (ND) and showcased that in leaflet and it worked.</li>
+		<li>The script is still taking too long to run so we could look at either:
+			<ol>
+				<li>Create a file for each time slot only showing data not already shown and add it as a layer</li>
+				<li>Create polygons based on linked nodes. This should improve the graphics and eliminate the data required for the elements within a flooded boundary</li>
+			</ol>
+		</li>
+		<li>Adapted the script to export a file for each time</li>
+		<li>Massively optimised code showing only changes to previous time in th ehome it can be used to overlay on leaflet</li>
+		<li>Attempted to redesign the export data in harmony with the oil spill demo but couldn't get it working in leaflet</li>
+
 		</ul><br>
 	</td>
   </tr>
  <tr>
     <td class="data">2</td>
-	<td class="data">Power BI</td>
+	<td class="data">Carnstone Project</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Influx dashboard created (<a target="_blank" href="https://app.powerbi.com/links/yQW1jOv7aF?ctid=109cec53-a877-42eb-93e8-b9f5c282ba38&pbi_source=linkShare">PBI Influx Office Use</a>)</li>
+			<li>Generated a new bearer token and sent to Michael.</li>
+			<li>New request from acquisition to report pay data for Deliveroo.</li>
+			<li>Data supplied did not contain all columns required to carry out the comparison and report</li>
 		</ul>
 		<br>
 	</td>
  </tr>
   <tr>
 	<td class="data">3</td>
-	<td class="data">influx</td>
+	<td class="data">Health &amp; Safety PBIX</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-		<li>Began ADF pipeline to import data from influx db to datawarehouse</li>
-		<li>Imports for all 4 regions to staging complete</li>
-		<li>Stored Procs for processing data to dimension tables produced</li>
+		<li>Explored the pbix file and gained access to the <a target="_blank" href="https://slrgroup.sharepoint.com/sites/HealthandSafetyTeam/Lists/Near%20Miss%20Reporting/AllItems.aspx?e=3%3Acbda98a8f7ab4943b61b1a7b2a9c91fe&sharingv2=true&fromShare=true&at=9&clickparams=eyAiWC1BcHBOYW1lIiA6ICJNaWNyb3NvZnQgT3V0bG9vayIsICJYLUFwcFZlcnNpb24iIDogIjE2LjAuMTg2MjMuMjAyMDgiLCAiT1MiIDogIldpbmRvd3MiIH0%3D&CID=47e799a1%2D309a%2Dc000%2Dc83b%2Dbe19636bacd3&cidOR=SPO"> sharepoint list </a></li>
+		<li>Had meeting with Jayne Talbot and Lee Farrelly and received <a target="_blank" href="https://slrgroup-my.sharepoint.com/personal/pmodha_slrconsulting_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpmodha%5Fslrconsulting%5Fcom%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&view=0"> designs </a> for additional work </li>
 		</ul><br>
 	</td>
   </tr>
@@ -184,25 +198,31 @@ body {
 	<td class="data">Postcode Distance</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Added progress bar and front end feedback to view current state</li>
-			<li>Added jobs with status and progress</li>
-			<li>added delete job button and export button and view button</li>
-			<li>added dynamic array to log previous postcade searches to avoid unneccessary api calls</li>
-			<li>added dynamic array to log previous routes to avoid uneccessary api calls</li>
-			<li>added process button to continue previous stopped job</li>
-			<li>added optional end point to return table progress if websockets fails to work</li>
-			<li>created <a target="_blank" href="waap-dev-postcode-lookup-akdxbycfexb0d4ad.uksouth-01.azurewebsites.net" >DEV</a> and <a target="_blank" href="https://uat-postcode-lookup-waap-dgbka7emg7ecbse7.uksouth-01.azurewebsites.net/">UAT</a> environment in Azure for accessible web apps</li>
-			<li>processed all the data</li>
+			<li></li>
 		</ul>
 		<br>
 	</td>
  </tr>
  <tr>
-	<td class="data">5</td>
+    <td class="data">5</td>
+	<td class="data">DataWareHouse Sage - Workday pipeline</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+		<ul>
+			<li>Began creating the table structure for the staging table</li>
+			<li>Wrote script to create new dimension table PeopleHrWD and copy existing data over from PeopleHr</li>
+			<li>Gained access to the UAT environment to run the API from postman</li>
+		</ul>
+		<br>
+	</td>
+ </tr>
+ <tr>
+	<td class="data">6</td>
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Switched on USB unblocking as IT were deactivating access without users knowing</li>
+	  	<li>Manually updated comments to a new document in stakeholder management database for Laura</li>
+		<li>Got the Global Events web app working in DEV by adding me and Laura to the Users database, but not PROD due to unknown implications</li>
+		<li>Helped Ben to deploy the Asset Manager Admin app to DEV. Created new env variables inc NODE_ENV=local to get it working.</li>
 	    </ul><br>
 	</td>
   </tr>
@@ -237,11 +257,11 @@ body {
   </tr>
   <tr>
     <td class="data">2</td>
-	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2" >n8n</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
+	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=lSwMtsm6oDU" >Productive Dude</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
 	<td class="data"></td>
 	<td class="data">8 Apr 2025</td>
 	<td class="data" style="border-right:1px solid black;">
-	<ul><li>Continued the training</li>
+	<ul><li>Continued the training - Setup n8n from <a target="_blank" href="https://docs.n8n.io/hosting/installation/docker/#starting-n8n">docker</a> with `docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n` then run from <a target="_blank" href="http://localhost:5678">http://localhost:5678</a> </li>
 	</ul></td>
   </tr>
 </table>
@@ -259,18 +279,28 @@ body {
   </tr>
   <tr>
 	<td class="data">1</td>
-	<td class="data">jwt_token</td>
-	<td class="data" style="border-right:1px solid black;">In May, run jwt_token through Pycharm for the Carnstone project to produce a new bearer key that is required by <a target="_blank" href="mailto:micjohnston@me.com">Michael Johnston</a></td>
+	<td class="data">Continue AI training</td>
+	<td class="data" style="border-right:1px solid black;">Continue with the <a target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2">n8n training</a></td>
   </tr>
   <tr>
 	<td class="data">2</td>
-	<td class="data">GIS Flood modelling</td>
-	<td class="data" style="border-right:1px solid black;">Make contact with Robert Walker to set up QGIS for demo HDF files</td>
+	<td class="data">DWH - Sage to Workday</td>
+	<td class="data" style="border-right:1px solid black;">Continue structuring the staging table and create the pipeline in the <a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/Global-DataWarehouse-RG/providers/Microsoft.DataFactory/factories/adf-slr-data-warehouse/overview"> ADF </a></td>
   </tr>
   <tr>
 	<td class="data">3</td>
-	<td class="data">Continue AI training</td>
-	<td class="data" style="border-right:1px solid black;">Continue with the <a target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2">n8n training</a></td>
+	<td class="data">Carnstone - Deliveroo</td>
+	<td class="data" style="border-right:1px solid black;">Continue the report subject to data receipt</td>
+  </tr>
+  <tr>
+	<td class="data">4</td>
+	<td class="data">GIS - Flood Modelling</td>
+	<td class="data" style="border-right:1px solid black;">Continue exploring the leaflet setup to show the temporal data. Investigate layers and times</td>
+  </tr>
+  <tr>
+	<td class="data">5</td>
+	<td class="data">H&S PowerBI Report</td>
+	<td class="data" style="border-right:1px solid black;">Make a start on the report</td>
   </tr>
 </table>
 
@@ -324,21 +354,6 @@ body {
 
 <br>
 
-<!--
-<br><br>kind regards<br><br>
-<b><font style="font-family: Arial;font-size:15pt;color:#3C543C">Mike Harley</font></b><br>
-<font style="font-family: Arial;font-size:11pt;color:#507A57">Developer - Digital Services &amp; AI</font>
-<br><br>
-<a href="#" style="cursor:default;">&#9742;: +44 7779 858032</a><br>
-<a target="_blank" href="mailto:mike.harley@slrconsulting.com">&#9993;: mike.harley@slrconsulting.com</a><br>
- <a target="_blank" href="https://www.slrconsulting.com">&#127760;:https://www.slrconsulting.com</a><br><br>&nbsp;
-<p style="font-family: Arial;font-size:15pt;">SLR Consulting Limited</p>
-<p style="font-family: Arial;font-size:11pt;">The Barn, Cadhay, Ottery St Mary, Devon, EX11 1QT</p>
-<br>
-
-<a target="_blank" href="https://www.slrconsulting.com" class="site-header__logo">
-<img src="https://nla-production-media.s3.eu-west-2.amazonaws.com/75974/SLR-Logo-%28low-res%29.jpg?v=1712059328" width=180 />
--->
 </body>
 </html>
 

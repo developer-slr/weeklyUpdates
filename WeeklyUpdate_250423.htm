@@ -131,7 +131,7 @@ body {
 	<th class="darkGreen">Line Manager</th>
 	<th class="lightBlue">Matt Daw</th>
 	<th class="darkGreen">Report Date</th>
-	<th class="lightBlue" style="border-right:1px solid black;">09 Apr 2025</th>
+	<th class="lightBlue" style="border-right:1px solid black;">23 Apr 2025</th>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
-    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 24 Mar - 09 Apr 25</td>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 10 Apr 25 - 23 Apr 25</td>
   </tr>
   <tr>
     <td class="lightGrHeader">No.</td>
@@ -151,10 +151,21 @@ body {
 	<td class="data">GIS - Flood Modelling</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	    <li>Discussed data with Robert Walker. It appears we need more files</li>
-		<li>Rob offfered to help set up QGIS with us</li>
-		<li>Noted the use of British National Grid</li>
-		<li>Explained the data was pixels in rectangle but we couldn't work out the 217 in the array</li>
+	    <li>Had a session with Andy Bates to discuss any help he may be able to provide. Granted him access to the files.</li>
+		<li>Met up with Robert Walker who helped provide th emissing files and set up the plugins</li>
+		<ul>
+			<li>Files required include .xmdf, .prj, .2dm, .2dm.info.</li>
+			<li>Load the xmdf from Tuflow plugin menu, this then prompts for the 2dm file</li>
+			<li>Requires British National Grid 27700 and Quickmapservices plugin</li>
+			<li>Using Web..QuickMapServices..Search QMS search for 'open Data' and select OS OpenData Streetview</li>
+			<li>Rearrange layers to view model over the map</li>
+		</ul>
+		<li>Met with Andy again to discuss options. He suggested rather than try and convert 
+			from British National Grid to WJS84 or Web Mercator Projection, try setting leaflet to read 
+			British National Grid</li>
+		<li>Andy also suggested that you should be able to export to geoTiff from Tuflow and you can also convert
+			to geotiff from QGIS using the GDAL CLI commands
+		</li>
 		</ul><br>
 	</td>
   </tr>
@@ -163,7 +174,7 @@ body {
 	<td class="data">Power BI</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Influx dashboard created (<a target="_blank" href="https://app.powerbi.com/links/yQW1jOv7aF?ctid=109cec53-a877-42eb-93e8-b9f5c282ba38&pbi_source=linkShare">PBI Influx Office Use</a>)</li>
+			<li></li>
 		</ul>
 		<br>
 	</td>
@@ -173,9 +184,8 @@ body {
 	<td class="data">influx</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-		<li>Began ADF pipeline to import data from influx db to datawarehouse</li>
-		<li>Imports for all 4 regions to staging complete</li>
-		<li>Stored Procs for processing data to dimension tables produced</li>
+		<li>Trigger actioned to automate the daily retrieval of influx data to the datawarehouse</li>
+		<li>Removed 172s &amp; 169s and added delete to last stored proc in the flow</li>
 		</ul><br>
 	</td>
   </tr>
@@ -184,15 +194,9 @@ body {
 	<td class="data">Postcode Distance</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Added progress bar and front end feedback to view current state</li>
-			<li>Added jobs with status and progress</li>
-			<li>added delete job button and export button and view button</li>
-			<li>added dynamic array to log previous postcade searches to avoid unneccessary api calls</li>
-			<li>added dynamic array to log previous routes to avoid uneccessary api calls</li>
-			<li>added process button to continue previous stopped job</li>
-			<li>added optional end point to return table progress if websockets fails to work</li>
-			<li>created <a target="_blank" href="waap-dev-postcode-lookup-akdxbycfexb0d4ad.uksouth-01.azurewebsites.net" >DEV</a> and <a target="_blank" href="https://uat-postcode-lookup-waap-dgbka7emg7ecbse7.uksouth-01.azurewebsites.net/">UAT</a> environment in Azure for accessible web apps</li>
-			<li>processed all the data</li>
+			<li>Traced route to prove sea crossings returned in legs thus are included in total distance</li>
+			<li>Sorted out a bug that was preventing Australia / New Zealand from showing</li>
+			<li></li>
 		</ul>
 		<br>
 	</td>
@@ -202,7 +206,7 @@ body {
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Switched on USB unblocking as IT were deactivating access without users knowing</li>
+	  	<li>Made my first AI agent to query my google calendar in n8n</li>
 	    </ul><br>
 	</td>
   </tr>
@@ -237,11 +241,11 @@ body {
   </tr>
   <tr>
     <td class="data">2</td>
-	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2" >n8n</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
+	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=lSwMtsm6oDU" >Productive Dude</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
 	<td class="data"></td>
 	<td class="data">8 Apr 2025</td>
 	<td class="data" style="border-right:1px solid black;">
-	<ul><li>Continued the training</li>
+	<ul><li>Continued the training - Setup n8n from <a target="_blank" href="https://docs.n8n.io/hosting/installation/docker/#starting-n8n">docker</a> with `docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n` then run from <a target="_blank" href="http://localhost:5678">http://localhost:5678</a> </li>
 	</ul></td>
   </tr>
 </table>
@@ -264,13 +268,28 @@ body {
   </tr>
   <tr>
 	<td class="data">2</td>
-	<td class="data">GIS Flood modelling</td>
-	<td class="data" style="border-right:1px solid black;">Make contact with Robert Walker to set up QGIS for demo HDF files</td>
+	<td class="data">Continue AI training</td>
+	<td class="data" style="border-right:1px solid black;">Continue with the <a target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2">n8n training</a></td>
   </tr>
   <tr>
 	<td class="data">3</td>
-	<td class="data">Continue AI training</td>
-	<td class="data" style="border-right:1px solid black;">Continue with the <a target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2">n8n training</a></td>
+	<td class="data">Flood Modelling</td>
+	<td class="data" style="border-right:1px solid black;">Look for viewing geotiff in leaflet</td>
+  </tr>
+  <tr>
+	<td class="data">4</td>
+	<td class="data">Cairnstone</td>
+	<td class="data" style="border-right:1px solid black;">Get all the Cairnstone project documentation together ready for May</td>
+  </tr>
+  <tr>
+	<td class="data">5</td>
+	<td class="data">Global-event tool</td>
+	<td class="data" style="border-right:1px solid black;">Get it working</td>
+  </tr>
+  <tr>
+	<td class="data">6</td>
+	<td class="data">Asset Management Admin</td>
+	<td class="data" style="border-right:1px solid black;">Get it deployed</td>
   </tr>
 </table>
 
@@ -324,21 +343,6 @@ body {
 
 <br>
 
-<!--
-<br><br>kind regards<br><br>
-<b><font style="font-family: Arial;font-size:15pt;color:#3C543C">Mike Harley</font></b><br>
-<font style="font-family: Arial;font-size:11pt;color:#507A57">Developer - Digital Services &amp; AI</font>
-<br><br>
-<a href="#" style="cursor:default;">&#9742;: +44 7779 858032</a><br>
-<a target="_blank" href="mailto:mike.harley@slrconsulting.com">&#9993;: mike.harley@slrconsulting.com</a><br>
- <a target="_blank" href="https://www.slrconsulting.com">&#127760;:https://www.slrconsulting.com</a><br><br>&nbsp;
-<p style="font-family: Arial;font-size:15pt;">SLR Consulting Limited</p>
-<p style="font-family: Arial;font-size:11pt;">The Barn, Cadhay, Ottery St Mary, Devon, EX11 1QT</p>
-<br>
-
-<a target="_blank" href="https://www.slrconsulting.com" class="site-header__logo">
-<img src="https://nla-production-media.s3.eu-west-2.amazonaws.com/75974/SLR-Logo-%28low-res%29.jpg?v=1712059328" width=180 />
--->
 </body>
 </html>
 
