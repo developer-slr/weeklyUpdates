@@ -131,7 +131,7 @@ body {
 	<th class="darkGreen">Line Manager</th>
 	<th class="lightBlue">Matt Daw</th>
 	<th class="darkGreen">Report Date</th>
-	<th class="lightBlue" style="border-right:1px solid black;">04 June 2025</th>
+	<th class="lightBlue" style="border-right:1px solid black;">18 June 2025</th>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
-    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 08 May 25 - 04 Jun 25</td>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 04 June 25 - 18 Jun 25</td>
   </tr>
   <tr>
     <td class="lightGrHeader">No.</td>
@@ -151,33 +151,7 @@ body {
 	<td class="data">DataWareHouse Sage - Workday pipeline</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Had a call with Peter Lowe to ensure I was collecting the right data</li>
-			<li>Setup the ADF pipeline (adf-slr-data-warehouse) in the <a target="_blank" href="https://portal.azure.com/#home"> Azure Portal</a> using the following resources
-				<ul>
-					<li>Source Dataset: XML_Response</li>
-					<li>Sink Dataset: workday_people</li>
-					<li>Pipeline: workday_api/XML_Workday_Post_Data</li>
-				</ul>
-			</li>
-			<li>Changed the xml body to return all records which happens using postman but a successful run from the ADF returns no records</li>
-			<li>Generating Python to convert XML to CSV so I can read the data in the hope to understand why no records are being returned.</li>
-			<li>Had a catchup with Peter Lowe who was able to provide additional syntax to limit records returned on each page and also select a page number. This may help isolate a cause for why the adf is returning a null record</li>
-			<li>Succeeded when setup for page 1 count 1 but failed when page 1 count 2</li>
-			<li>Discovered pipeline load_staging_workday_org... and analysed the setup. Found out how to loop the pages but data was still returning null records</li>
-			<li>With closer examination I could see the mapping was prompted by the collection reference being mapped to the parent path and all subsequent mappings were referenced from the sub paths. I replicated that process and it worked so was able to populate all records</li>
-			<li>Inconsistant data was discovered due to the location of targeted elements in the array changing according to available data per employee</li>
-			<li>This was fixed by adding a key/value pair setup to the stg table for each expected element in the array</li>
-			<li>ppsecstg schema created</li>
-			<li>Pipeline adjusted to new schema and added new columns for preferred name</li>
-			<li>Created new PeopleHrWD table and associated Insert statement to extract data from ppsecstg.WorkdayPeopleData</li>
-			<li>Constructed query that will be a view to lookup IDs to provide readable data</li>
-			<li>Created PeopleHrWD spreadsheet in DW_Data_Mapping.xlsx and populated mapping data</li>
-			<li>Peter found a truncation on the Deltek code. This was caused by the mapping process automatically deciding the data type before import. This can be switched off on the Source tab. Uncheck 'Detect data type' </li>
-			<li>Created the secure table, view and stored proc</li>
-			<li>Created the snapshot table, view and stored proc</li>
-			<li>Captured the deltek code from payroll based on type</li>
-			<li>Fixed the aquired date format that was not in sync with the other date formats</li>
-			<li>Loaded all the offices into an OfficeHrWD table from the office API</li>
+			<li></li>
 		</ul>
 		<br>
 		<p>Useful Links:</p>
@@ -194,33 +168,16 @@ body {
 	<td class="data">H &amp; S Incident Reporting</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Power BI report from Matt Sperryn / Priyanka. Request from Jayne Talbot.</li>
-		<li><a target="_blank" href="https://slrgroup.sharepoint.com/sites/HealthandSafetyTeam/Lists/Near%20Miss%20Reporting/AllItems.aspx?e=3%3Acbda98a8f7ab4943b61b1a7b2a9c91fe&sharingv2=true&fromShare=true&at=9&clickparams=eyAiWC1BcHBOYW1lIiA6ICJNaWNyb3NvZnQgT3V0bG9vayIsICJYLUFwcFZlcnNpb24iIDogIjE2LjAuMTg3MzAuMjAxNDIiLCAiT1MiIDogIldpbmRvd3MiIH0%3D&CID=7f5c9da1%2D208e%2Dc000%2Dd450%2Dd33392b7cd37&cidOR=SPO"> Sharepoint List </a></li>
-		<li>Completed the report and published to DEV</li>
-		<li>Began working through more changes see 03rd June email from Lee Farrelly</li>
+	  	<li></li>
 	    </ul><br>
 	</td>
   </tr>
- <tr>
-    <td class="data">3</td>
-	<td class="data">Carnstone Deliveroo</td>
-	<td class="data" style="border-right:1px solid black;"><br>
-		<ul>
-			<li>Met with Hattie and Ali to review the query. they confirmed they are happy</li>
-			<li>Provided 75,770 records showing riders paid less than national living wage as CSV and included an additional report showing 1000 where SLR show payment above NLW and Deliveroo show under and uploaded to <a target="_blank" href="https://slrgroup.sharepoint.com/:f:/s/Carnstone-Clients/EhX1h9DUgGtDnQWlwb81fxoBf_pv41ORLpWQm_G3H97hfA?e=9Q0LHm&xsdata=MDV8MDJ8TWljaGFlbC5IYXJsZXlAc2xyY29uc3VsdGluZy5jb218M2Y1MzZlMzgzYTEyNDM3NjMzMDgwOGRkOTE3NDgzNjh8MTA5Y2VjNTNhODc3NDJlYjkzZThiOWY1YzI4MmJhMzh8MHwwfDYzODgyNjY1MTgxMTIwOTM4MnxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=ZXBZSTlFUVZpa2dyQjB5VVFNd242N29kQllKMmJOY1BWSW4rYTdORmo1ND0%3d">sharepoint</a></li>
-			<li>Had to run the report again as <a target="_blank" title="Alejandro Fiocco" href="mailto:alejandro.fiocco@slrconsulting.com"> Alejandro </a> had spotted that my division by 100 was rounding the figures so I updated the query to devide by 100.0 that increased the number of under paid riders to 87,349</li>
-		</ul>
-		<br>
-	</td>
- </tr>
  <tr>
 	<td class="data">4</td>
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>The HUB Training Completed - Sexual Harassment Learning</li>
-		<li>The HUB Training Completed - Diginity and respect in the workplace</li>
-		<li>Created new adf pipeline for AI Blake Exclusion list called 'load Ai Blake Exclusion' and <a target="_blank" href="https://slrgroup.sharepoint.com/sites/DataWarehouse_Master_Data/_layouts/15/viewlsts.aspx?view=14">sharepoint list</a> </li>
+	  	<li></li>
 	    </ul><br>
 	</td>
   </tr>
