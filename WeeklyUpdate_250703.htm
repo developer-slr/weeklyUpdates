@@ -139,7 +139,7 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
-    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 04 June 25 - 18 Jun 25 (A/L 09th - 13th) </td>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 19 Jun 25 - 03 Jul 25</td>
   </tr>
   <tr>
     <td class="lightGrHeader">No.</td>
@@ -151,14 +151,9 @@ body {
 	<td class="data">DataWareHouse Sage - Workday pipeline</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Updated active status to new terminated path</li>
-			<li>Update the view to return manager name by swapping the sub query for an INNER JOIN</li>
-			<li>Added 5 new custom ID and custom type fields to capture payroll and delttek etc</li>
-			<li>Entity code lookup enabled in view that acts as the source for the merge</li>
-			<li>Managers lookup prepared for PeopleHr on first run and ready to swap with self join to PeopleHrWD at runtime</li>
-			<li>All records copied from Sage to Workday that are not found in workday are updated as archived</li>
-			<li>IDENTITY added to both non-secure and secure peoplehrWD tables ready for new records</li>
-			<li>Further changes in the process that copies the snapshot data to the new snapshot table including data cleansing</li>
+			<li>Added new Xpaths 'Position time Type', 'Employee Type' and 'Termination Reason' to the WorkdayPeopleData and remapped the pipeline </li>
+			<li>Added an Update statement to process to handle line manager names</li>
+			<li>Changed the secure process to adopt the new 'Termination Reason' field</li>
 		</ul>
 		<br>
 		<p>Useful Links:</p>
@@ -175,10 +170,12 @@ body {
 	<td class="data">H &amp; S Incident Reporting</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Incident Type filter amended to display hazards, near miss, injury etc in overview page</li>
-		<li>Incidents by office chart removed from overview page</li>
-		<li>days since last RIDDOR added to overview page</li>
-		<li>bar chart added to show incident type per month</li>
+	  	<li>Accident / illness charts split on Injury or Illness tab</li>
+		<li>Datagrid added to all pages</li>
+		<li>Length of service charts removed from all pages</li>
+		<li>Added route cause to all pages</li>
+		<li>Datagrid columns changes include removing the time from the date column, removing the impact column and adding the description column</li>
+		<li>Published new changes</li>
 	    </ul><br>
 	</td>
   </tr>
@@ -187,9 +184,7 @@ body {
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Ran an udated query for Deliveroo for Alejandro Fiocco to query the results having applied a rate of £12 for all deliveries post 31 MAY 2024.</li>
-		<li>Split the file at Alejandros request into 3 smaller files as the 1 large couldn't be opened. Uploaded to the usual <a target="_blank" href="https://slrgroup.sharepoint.com/sites/Carnstone-Clients/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCarnstone%2DClients%2FShared%20Documents%2FDeliveroo%2F03%20Projects%2FRider%20Pay%20Reviews&p=true&ga=1"> sharepoint drive</a></li>
-		<li>Ran another query using the NLW of 2024 on 2023 data and the NLW of 2025 on the 2024 data that seems to be the cause of the result mismatch.</li>
+	  	<li></li>
 	    </ul><br>
 	</td>
   </tr>
