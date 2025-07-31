@@ -131,7 +131,7 @@ body {
 	<th class="darkGreen">Line Manager</th>
 	<th class="lightBlue">Matt Daw</th>
 	<th class="darkGreen">Report Date</th>
-	<th class="lightBlue" style="border-right:1px solid black;">02 July 2025</th>
+	<th class="lightBlue" style="border-right:1px solid black;">13 Aug 2025</th>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
-    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 19 Jun 25 - 02 Jul 25</td>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 31 Jul 25 - 13 Aug 25</td>
   </tr>
   <tr>
     <td class="lightGrHeader">No.</td>
@@ -151,15 +151,7 @@ body {
 	<td class="data">DataWareHouse Sage - Workday pipeline</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li>Added new Xpaths 'Position time Type', 'Employee Type' and 'Termination Reason' to the WorkdayPeopleData and remapped the pipeline </li>
-			<li>Added an Update statement to process to handle line manager names</li>
-			<li>Changed the secure process to adopt the new 'Termination Reason' field</li>
-			<li>Created the fact view and associated fact merge sp with new fact.PeopleWD table</li>
-			<li>Populated the new snapshot table (non-secure)</li>
-			<li>Tested pipeline with errors. Caused by duplicate Deltek_ID in Peters record. Also had an error converting the Workday ID in the merge proc caused by the standard ISNULL syntax that is incompatible for a GUID datatype</li>
-			<li>Pipeline successful including API load, PeopleHrWD load inc secure, Snapshot load inc sec, fact.peopleWD load</li>
-			<li>Added a script to remove the history from the temporal tables when we're happy with the data</li>
-			<li>Updated SQL and published to <a target="_blank" href="https://dev.azure.com/slr-consulting/Data%20Warehouse/_git/Workday"> repos</a> to include clear steps if I'm absent when the change over happens due to a delay in go live</li>
+			<li></li>
 		</ul>
 		<br>
 		<p>Useful Links:</p>
@@ -176,13 +168,12 @@ body {
 	<td class="data">H &amp; S Incident Reporting</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>Accident / illness charts split on Injury or Illness tab</li>
-		<li>Datagrid added to all pages</li>
-		<li>Length of service charts removed from all pages</li>
-		<li>Added route cause to all pages</li>
-		<li>Datagrid columns changes include removing the time from the date column, removing the impact column and adding the description column</li>
-		<li>Published new changes</li>
+	  	<li></li>
 	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li><a target="_blank" href="https://app.powerbi.com/groups/c9b9cbe7-6598-4dc6-879d-1394e8883487/reports/89e3075e-359d-4225-8fee-7422eb56a010/726227a9344bd20ed150?experience=power-bi">Power BI Report</a> </li>
+		</ul><br>
 	</td>
   </tr>
  <tr>
@@ -190,9 +181,15 @@ body {
 	<td class="data">Other</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li>USB Unblocking - <a target="_blank" href="https://slrgroup.sharepoint.com/sites/ITServiceDelivery/_layouts/15/listform.aspx?PageType=4&ListId=37319367-d937-4f33-a24a-b1ce49b13d65&ID=2744&ContentTypeID=0x01006422D728D4BFEC4B9D618840D01B7F070047A07995CD19E74F8A72C941BA1A7C3B&xsdata=MDV8MDJ8TWljaGFlbC5IYXJsZXlAc2xyY29uc3VsdGluZy5jb218NDhjYWRhOTQ0MzAwNDhkYjFlYTMwOGRkYjhmYjZiOTl8MTA5Y2VjNTNhODc3NDJlYjkzZThiOWY1YzI4MmJhMzh8MHwwfDYzODg3MDExMjIwMjk1MDkzNnxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=UVFNbndYOWIrRElBdjVLbDc5ZTNmb1NUdlErWFY4VjJlR2tBZENWamVwYz0%3d"> checked failure</a> submitted on Sun 22nd June 2025 @ 10:44. Record updated on list fine. Case closed.</li>
-		<li>Ran another query for Deliveroo, divided the file into 1,000,000 record files and uploaded to sharepoint 2025 folder</li>
-		<li>Updated the Group link to manage <a target="_blank" href="https://make.powerapps.com/environments/default-109cec53-a877-42eb-93e8-b9f5c282ba38/solutions/09b02ff5-dc3d-ef11-8409-000d3ad9c548/objects/cloudflows?utm_source=office&utm_medium=app_launcher&utm_campaign=office_referrals"> USB unblocking</a> users for Jacob</li>
+	  	<li>Trid to get Equip set up locally but having trouble with slrEasyAuth</li>
+        <li>Tried the following to trigger credentials for authorization:
+            <ul>
+                <li>dotnet build /p:NugetInteractive="true"</li>
+                <li>dotnet restore --configfile .\nuget.config --interactive</li>
+                <li>dotnet restore --interactive</li>
+            </ul>
+        </li>
+        <li>Using dotnet nuget locals all --clear to clear it and deleting SessionTokenCache.dat at %userprofile%\AppData\Local\MicrosoftCredentialProvider</li>
 	    </ul><br>
 	</td>
   </tr>
@@ -219,7 +216,8 @@ body {
 	<td class="data"><a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2PjDI">Microsoft Training</a> - on m**********##@outlook.com account</td>
 	<td class="data"><a target="_blank" href="https://learn.microsoft.com/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification&WT.mc_id=certposter_poster-wwl">Microsoft Azure Fundamentals</a><br>
 	<a target="_blank" href="https://aka.ms/AZ900-StudyGuide">AZ-900 study guide</a><br>
-	<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-900/practice/assessment?assessmentId=23&assessment-type=practice">AZ-900 practice test</a></td>
+	<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-900/practice/assessment?assessmentId=23&assessment-type=practice">AZ-900 practice test</a><br>
+	<a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/tools/sharepoint-samples">AI Foundry</a> </td>
 	<td class="data">30 Jan 2025</td>
 	<td class="data" style="border-right:1px solid black;">
 	<ul><li>Continued the training</li>
@@ -229,7 +227,7 @@ body {
     <td class="data">2</td>
 	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=lSwMtsm6oDU" >Productive Dude</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
 	<td class="data"></td>
-	<td class="data">8 Apr 2025</td>
+	<td class="data">24 Jul 2025</td>
 	<td class="data" style="border-right:1px solid black;">
 	<ul><li>Continued the training - Setup n8n from <a target="_blank" href="https://docs.n8n.io/hosting/installation/docker/#starting-n8n">docker</a> with `docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n` then run from <a target="_blank" href="http://localhost:5678">http://localhost:5678</a> </li>
 	</ul></td>
@@ -254,23 +252,8 @@ body {
   </tr>
   <tr>
 	<td class="data">2</td>
-	<td class="data">DWH - Sage to Workday</td>
-	<td class="data" style="border-right:1px solid black;">Create secure snapshot table; Copy existing snapshot data from PeopleHr to PeopleHrWD / and Secure</td>
-  </tr>
-  <tr>
-	<td class="data">3</td>
 	<td class="data">GIS - Flood Modelling</td>
 	<td class="data" style="border-right:1px solid black;">Continue exploring the leaflet setup to show the temporal data. Investigate layers and times</td>
-  </tr>
-    <tr>
-	<td class="data">4</td>
-	<td class="data">H &amp; S Incident Reporting Power BI</td>
-	<td class="data" style="border-right:1px solid black;"></td>
-  </tr>
-    <tr>
-	<td class="data">5</td>
-	<td class="data">Deliveroo Documentation</td>
-	<td class="data" style="border-right:1px solid black;">Document steps in sharepoint to show how to import large data and run the queries. Matt to send link</td>
   </tr>
 </table>
 
@@ -304,6 +287,36 @@ body {
 
 <table width="99%" cellpadding=0 cellspacing=0>
   <tr>
+    <td class="darkGreen" colspan=2 style="text-align:center; border-right:1px solid black;" >USB Unblocking Quick Reference</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader" width="150px">Item</td>
+	<td class="lightGrHeader">Notes</td>
+  </tr>
+  <tr>
+    <td class="data">Sharepoint List</td>
+	<td class="data"><a target="_blank" href="https://slrgroup.sharepoint.com/sites/ITServiceDelivery/Lists/USB%20Unblocking%20Results/AllItems.aspx">ICT Service Delivery Sharepoint List</a></td>
+  </tr>
+  <tr>
+    <td class="data">Power BI</td>
+	<td class="data"><a target="_blank" href="https://app.powerbi.com/groups/c9b9cbe7-6598-4dc6-879d-1394e8883487/reports/02e57a9a-bb09-47f1-8980-ece866dd39dc/da0d6992f723e052afe0?experience=power-bi">USB Unblocking </a> </td>
+  </tr>
+  <tr>
+    <td class="data">Group Membership</td>
+	<td class="data"><a target="_blank" href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Faad.portal.azure.com%2F%23view%2FMicrosoft_AAD_IAM%2FGroupDetailsMenuBlade%2F~%2FMembers%2FgroupId%2F5b039e07-6d7b-4874-b380-6e1f8a836057%2FmenuId%2F&data=05%7C02%7CMichael.Harley%40slrconsulting.com%7C2df6a83b93f14c7223ad08ddc7e99562%7C109cec53a87742eb93e8b9f5c282ba38%7C0%7C0%7C638886528222455490%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=G1LbunBO%2BgghLJKl%2F1k6%2BwWTw3hhM4hUkfo6%2BHybhVs%3D&reserved=0">Allow USB Mass Storage devices Group</a> </td>
+  </tr>
+    <tr>
+    <td class="data">Power Apps</td>
+	<td class="data"><a target="_blank" href="https://make.powerapps.com/environments/default-109cec53-a877-42eb-93e8-b9f5c282ba38/solutions/09b02ff5-dc3d-ef11-8409-000d3ad9c548/objects/cloudflows?utm_source=office&utm_medium=app_launcher&utm_campaign=office_referrals">USB Unblocking Cloud Flows</a> </td>
+  </tr>
+
+  
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
     <th class="darkBlue">Quick Links</th>
 	<th class="lightBlue"><a target="_blank" href="https://slrgroup.sharepoint.com/sites/DigitalServicesTeam">Digital Services &amp; AI</a><br>
 	<a target="_blank" href="https://myaccount.microsoft.com/">My Account</a> / <a target="_blank" href="https://myapps.microsoft.com/">My Apps</a><br>
@@ -311,7 +324,7 @@ body {
 	<a target="_blank" href="https://slrgroup.sharepoint.com/sites/ITServiceDelivery/Lists/USB%20Unblocking%20Results/AllItems.aspx?">USB Unblocking List</a> <br>
 	<a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_boards/board/t/Digital%20Services/Stories">Story Board</a></th>
 	<th class="lightBlue"><a target="_blank" href="https://slrconsulting.csod.com/samldefault.aspx">The POD (Training)</a><br>
-	<a target="_blank" href="https://fs-1123.cloudforce.com/">The HUB (Annual Leave)</a><br>
+	<a target="_blank" href="https://wd103.myworkday.com/slrconsulting/d/home.htmld">Workday (Annual Leave)</a><br>
 	<a target="_blank" href="https://slrconsulting.deltekenterprise.com/slrconsulting/app/">Vantagepoint (Timesheets)</a></th>
 	<th class="lightBlue">
 	<a target="_blank" href="https://dev.azure.com/slr-consulting/">DevOps</a> / <a target="_blank" href="https://portal.azure.com/">Azure Portal</a><br>
