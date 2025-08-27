@@ -105,6 +105,13 @@ body {
   scroll-behavior:smooth;
 }
 
+code {
+  background-color: black;
+  color:lime;
+  font-size: 16pt;
+  font-family: Agency FB;
+}
+
 ::-webkit-scrollbar
 {
   width:20px;
@@ -148,52 +155,172 @@ body {
   </tr>
  <tr>
     <td class="data">1</td>
-	<td class="data">DataWareHouse Sage - Workday pipeline</td>
+	<td class="data">Sharepoint Access to CV - AI.Blake</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 		<ul>
-			<li></li>
+			<li>Create logic app on DEV/TEST \ DEV-DataWarehouse-RG called SLR-Blake-SPAccess-LogicApps-DEV that performs an auto response to any new acces requests sent to automation@slrconsulting.com.</li>
+      <li>Recreated it in AI Subscription \ automations-prod called SLR-Blake-SPAccess-LogicApps-PROD</li>
+      <li>Changed the access requests on the <a target="_blank" href="https://slrgroup.sharepoint.com/sites/GlobalMasterCV/">sharepoint site</a> to point to automations@slrconsulting.com and added a custom message.</li>
 		</ul>
 		<br>
 		<p>Useful Links:</p>
 		<ul>
-			<li><a target="_blank" href="https://slrgroup.sharepoint.com/sites/ICTBI/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=Cu7ETa&clickparams=eyAiWC1BcHBOYW1lIiA6ICJNaWNyb3NvZnQgT3V0bG9vayIsICJYLUFwcFZlcnNpb24iIDogIjE2LjAuMTg3MzAuMjAxNjgiLCAiT1MiIDogIldpbmRvd3MiIH0%3D&CID=99b99ea1%2Dd0c3%2Dc000%2Dad21%2D45df4aa2a16c&cidOR=SPO&FolderCTID=0x012000830B6A349D17ED4CBE9AE85DD67F85C6&id=%2Fsites%2FICTBI%2FShared%20Documents%2FData%20Dictionary%2FDWH%20Master%20Documentation">DWH People Requirements</a> on sharepoint for mappings, DWH People Requirements for secure/non-secure entries</li>
-			<li><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/Global-DataWarehouse-secure-RG/overview">secure ADF</a> </li>
-			<li><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/Global-DataWarehouse-RG/overview">original ADF</a> </li>
+			<li>Ticket <a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_boards/board/t/Digital%20Services/Stories?workitem=21947">21947</a></li>
+      <li>Global Master CV <a target="_blank" href="https://slrgroup.sharepoint.com/sites/GlobalMasterCV/">sharepoint site</a></li>
 		</ul>
 		<br>
 	</td>
  </tr>
   <tr>
 	<td class="data">2</td>
-	<td class="data">H &amp; S Incident Reporting</td>
+	<td class="data">Stakeholder-management</td>
 	<td class="data" style="border-right:1px solid black;"><br>
 	  <ul> 
-	  	<li></li>
+	  	<li>Found the data problem that was cross wiring comment owners. Updated to correct company</li>
+      <li>Tried to locate the cause of the problem but struggled.</li>
 	    </ul><br>
 		<p>Useful Links:</p>
 		<ul>
-			<li><a target="_blank" href="https://app.powerbi.com/groups/c9b9cbe7-6598-4dc6-879d-1394e8883487/reports/89e3075e-359d-4225-8fee-7422eb56a010/726227a9344bd20ed150?experience=power-bi">Power BI Report</a> </li>
+			<li></li>
 		</ul><br>
 	</td>
   </tr>
  <tr>
 	<td class="data">3</td>
-	<td class="data">Other</td>
+	<td class="data">Equip</td>
 	<td class="data" style="border-right:1px solid black;"><br>
+    <u>> Thu 31 July 2025</u>
 	  <ul> 
 	  	<li>Trid to get Equip set up locally but having trouble with slrEasyAuth</li>
         <li>Tried the following to trigger credentials for authorization:
             <ul>
-                <li>dotnet build /p:NugetInteractive="true"</li>
-                <li>dotnet restore --configfile .\nuget.config --interactive</li>
-                <li>dotnet restore --interactive</li>
+                <li><code>dotnet build /p:NugetInteractive="true"</code></li>
+                <li><code>dotnet restore --configfile .\nuget.config --interactive</code></li>
+                <li><code>dotnet restore --interactive</code></li>
+                <li><code>dotnet restore --configfile .\nuget.config --interactive --verbosity minimal</code></li>
+                <li><code>dotnet restore --configfile .\nuget.config --interactive --verbosity diag</code></li>
+                <li><code>dotnet restore --configfile .\nuget.config --interactive -v d</code></li>
+                <li><code>iex "& { $(irm https://aka.ms/install-artifacts-credprovider.ps1) } -AddNetfx"</code></li>
+                <li><code>iex "& { $(irm https://aka.ms/install-artifacts-credprovider.ps1) } -InstallNet8"</code> - see <a target="_blank" href="https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#installation-on-windows">article Installation on Windows</a> </li>
+                <li></li>
             </ul>
         </li>
-        <li>Using dotnet nuget locals all --clear to clear it and deleting SessionTokenCache.dat at %userprofile%\AppData\Local\MicrosoftCredentialProvider</li>
+        <li>Clear cache:
+          <ul>
+            <li><code>dotnet nuget locals all --clear</code></li>
+            <li>remove SessionTokenCache.dat from %userprofile%\AppData\Local\MicrosoftCredentialProvider - see <a target="_blank" href="https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#session-token-cache-locations">arcticle Session Token Cache Locations</a> </li>
+            <li>remove msalV2.cache and msal.cache from %userprofile%\AppData\Local\.IdentityService</li>
+          </ul>   </li>
+        <li>Investigate Acquired bearer token using 'MSAL Silent'</li>
+        <li>Tried downloading the latest Microsoft.NuGet.CredentialProvider.zip following instructions. see <a target="_blank" href="https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#manual-installation-on-windows">article Manual installation on Windows</a></li>
+        <li>Tried to update the source with my credentials <br><code>dotnet nuget update source slrSSO -u "michael.harley@slrconsulting.com" -p "mypassword" --configfile .\nuget.config</code></li>
+        <li>Tried adding <a target="_blank" href="https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#environment-variables"> env variables</a> to windows inc:
+          <ul>
+            <li>NUGET_CREDENTIALPROVIDER_SESSIONTOKENCACHE_ENABLED=false</li>
+            <li>VSS_NUGET_EXTERNAL_FEED_ENDPOINTS={"endpointCredentials": [{"endpoint":"https://pkgs.dev.azure.com/slr-consulting/_packaging/SlrSSO/nuget/v3/index.json", "username":"michael.harley@slrconsulting.com", "password":"mypassword"}]}</li>
+          </ul>
+        </li>
+        <li>Validated nuget/dotnet is able to use the credentials that returned my credentials and all parameters looked good:<ul>
+          <li><code>%userprofile%\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft -U "https://pkgs.dev.azure.com/slr-consulting/_packaging/SlrSSO/nuget/v3/index.json" -v Verbose</code></li>
+        </ul></li>
 	    </ul><br>
+    <u>> Fri 01 Aug 2025</u>
+    <ul>
+      <li>Managed to get it up and running with some help from Thang who said slrEasyAuth isn't required for running the app locally. You just need to create a database in a local server instance and set up the connection in the EquipRequestManagement string found in appsettings.json</li>
+    </ul>
+	</td>
+  </tr>
+  <tr>
+	<td class="data">4</td>
+	<td class="data">Sustainablility Platform (CSI)</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Created the schema on local server</li>
+	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li></li>
+		</ul><br>
+	</td>
+  </tr>
+  <tr>
+	<td class="data">5</td>
+	<td class="data">Global Events</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Cloned Global-events app to Visual Studio to analyse a bug in reviewing requests process</li>
+      <li>Built the core app, refreshed the nuget packages and node modules, created the local connection and server connection to the datawarehouse</li>
+      <li>Had big problems logging in but resolved by changing a line in C:\Users\Michael.Harley\source\repos\global-events\src\GlobalEvents.App\ServiceCollectionExtensions.cs to allow the origin of localhost:3000 through</li>
+      <li>Also stopped the emails from being sent out by remarking out the EmailSender.cs line that sends the email</li>
+      <li>This then presented me with the unauthorised page which I ignore and navigate back to the login screen where it allows me to login</li>
+      <li>Checked the server logs and discovered a query that was returning a timeout so ran it through a trace and performance tuner and actioned the suggested creation of a non-clustered index and statistics on the billingrates table</li>
+      <li>This fixed the problem so was applied to PROD</li>
+	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li><a target="_blank" href="https://wapp-dev-global-events.azurewebsites.net/">DEV - https://wapp-dev-global-events.azurewebsites.net/</a> </li>
+      <li><a target="_blank" href="https://wapp-prod-global-events-test.azurewebsites.net/">TEST - https://wapp-prod-global-events-test.azurewebsites.net/</a> </li>
+      <li><a target="_blank" href="https://dev.azure.com/slr-consulting/Global%20Events%20Tool">Repos - DevOps</a> </li>
+      <li><a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-9.0">CORS - Allow Origin</a> </li>
+      <li><a target="_blank" href="https://web.dev/articles/cross-origin-resource-sharing?utm_source=devtools&utm_campaign=stable#preflight-requests-for-complex-http-calls">CORS - Explained</a> </li>
+		</ul><br>
+	</td>
+  </tr>
+  <tr>
+	<td class="data">6</td>
+	<td class="data">Flood Modelling</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Refreshed knowledge of logic and status</li>
+      <li>2dm file
+        <ul>
+          <li>ND references nodes</li>
+          <li>E4Q references elements made up of 4 nodes</li>
+          <li>ND contains location data when converted</li>
+          <li>center point is found of element then the coordinates are converted</li></ul>
+      </li>
+      <li>xmdf file
+        <ul>
+          <li>contains the time sets and depth dataset</li></ul>
+      </li>
+      <li>Created new repos called <a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_git/Flood%20Modelling?path=/README.md&version=GBmain"> Flood Modelling</a> in Digital Services</li>
+      <li>Uploaded code used to generate the geoJSON files along with scripts to read the XMDF and 2DM files and convert the coordinate system</li>
+      <li>Discovered that the output requires the Active dataset, times dataset and the values dataset to create a true image so re-wrote the script accordingly</li>
+      <li>Introduced colour to the flood model reflecting the depth value</li>
+	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li><a target="_blank" href="https://downloads.tuflow.com/_archive/TUFLOW_FV/Manual/TUFLOW_FV_User_Manual_2020.pdf#page=112"> TUflow 2dm file definition</a></li>
+      <li><a target="_blank" href="https://www.google.com/search?q=convert+Airy_1830+to+WGS+84+in+code&sca_esv=9c7ec454ad9eda0c&rlz=1C1GCEA_enGB1144GB1144&sxsrf=AHTn8zrXnS3iLdcUZfDe-HOAu0c73f2YYw%3A1745493911105&ei=lx8KaN6dBuOChbIPrtixkQQ&ved=0ahUKEwiexZ3Ex_CMAxVjQUEAHS5sLEIQ4dUDCBI&uact=5&oq=convert+Airy_1830+to+WGS+84+in+code&gs_lp=Egxnd3Mtd2l6LXNlcnAiI2NvbnZlcnQgQWlyeV8xODMwIHRvIFdHUyA4NCBpbiBjb2RlMggQABiABBiiBDIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIFEAAY7wVIvyBQjRRYtx9wA3gBkAEAmAGKAaABsQaqAQM0LjS4AQPIAQD4AQGYAgugAukGwgIKEAAYsAMY1gQYR8ICBBAjGCfCAgcQIRigARgKwgIEECEYFZgDAIgGAZAGCJIHAzUuNqAH0i-yBwMyLja4B9QG&sclient=gws-wiz-serp"> Conversion syntax for GIS model</a></li>
+      <li><a target="_blank" href="https://stevage.github.io/geojson-spec/#section-3.1.2">geojson documentation</a> </li>
+      <li><a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_git/Flood%20Modelling?path=/README.md&version=GBmain"> Flood Modelling Repos </a></li>
+		</ul><br>
 	</td>
   </tr>
 
+  <tr>
+	<td class="data">7</td>
+	<td class="data">Other</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Checked the USB unblocking error recieved on Tuesday</li>
+      <li>Addressed an email going to servicedesk coming from my admin account instead of automation account with Alan's assitance</li>
+      <li>Found a solution to prevent requests coming through for access to sharepoint. see <a target="_blank" href="https://www.google.com/search?q=is+there+a+way+to+disable+access+requests+to+sharepoint+sites&sca_esv=07fba3af1fe20c74&source=hp&ei=3DyTaMn2OKuFhbIPoNjZ0A0&iflsig=AOw8s4IAAAAAaJNK7HHMgRwaGUMSLQE1o9huGj8SomC3&ved=0ahUKEwjJ1MjbivaOAxWrQkEAHSBsFtoQ4dUDCBA&uact=5&oq=is+there+a+way+to+disable+access+requests+to+sharepoint+sites&gs_lp=Egdnd3Mtd2l6Ij1pcyB0aGVyZSBhIHdheSB0byBkaXNhYmxlIGFjY2VzcyByZXF1ZXN0cyB0byBzaGFyZXBvaW50IHNpdGVzMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigAUirfVDqBViqfHAKeACQAQCYAWCgAekcqgECNTi4AQPIAQD4AQGYAkSgAuQdqAIKwgIKEAAYAxiPARjqAsICChAuGAMYjwEY6gLCAgsQABiABBiKBRiRAsICCxAAGIAEGLEDGIMBwgIOEC4YgAQYsQMYxwEY0QPCAggQLhiABBixA8ICDhAuGIAEGIoFGLEDGIMBwgIIEAAYgAQYsQPCAgUQLhiABMICCxAuGIAEGLEDGIMBwgIFEAAYgATCAg4QABiABBiKBRixAxiDAcICBBAAGAPCAgYQABgWGB7CAggQABgWGB4YCsICCBAAGIAEGKIEwgIIEAAYiQUYogTCAgcQABiABBgNwgILEAAYgAQYigUYhgPCAgUQABjvBcICBBAhGBXCAgUQIRifBcICBxAhGAoYoAHCAgQQIRgKmAMFkgcCNjigB-3IArIHAjU4uAfTHcIHBzMyLjMyLjTIB1E&sclient=gws-wiz"> article</a> </li>
+      <li>Discussed solution with Julia Sequeira who accepted the solution and provided the dialog. Ticket raised <a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_boards/board/t/Digital%20Services/Stories?workitem=21947">21947</a> </li>
+      <li>Ran through steps with Shashank to deploy latest changes to SLR Spaces including the additional columns required for the sharepoint list and the deployment of the archiving logic app</li>
+      <li>Got the logic app working but couldn't copy the database due to the 40 quotas limit being reached.</li>
+      <li>Created new database in Global Subscription \ Global-Prod-PowerPlatform-RG called DB-DEV-PROD-slr-places (Not sure why I left the DEV in there :)</li>
+      <li>Applied a data fix to B4SI according to Thangs instructions (See Teams msg)</li>
+      <li>Spotted failures in Archive_historicalBookings logic app. Added nullable option affected parameter in the stored proc</li>
+	    </ul><br>
+      <p>Useful Links:</p>
+      <ul>
+        <li><a target="_blank" href="https://learn.microsoft.com/en-us/azure/logic-apps/connect-on-premises-data-sources?tabs=consumption#create-azure-gateway-resource">Logic Apps - connect to on-premises data sources</a> </li>
+        <li><a target="_blank" href="https://learn.microsoft.com/en-us/azure/connectors/connectors-create-api-sqlazure?tabs=consumption#multitenant-or-ise">Logic Apps - Connect to SQL Databases from Workflows</a> </li>
+      </ul>
+	</td>
+  </tr>
+ <tr>
   
   
 </table>
@@ -253,7 +380,12 @@ body {
   <tr>
 	<td class="data">2</td>
 	<td class="data">GIS - Flood Modelling</td>
-	<td class="data" style="border-right:1px solid black;">Continue exploring the leaflet setup to show the temporal data. Investigate layers and times</td>
+	<td class="data" style="border-right:1px solid black;">Continue exploring the leaflet setup to show the temporal data. Investigate layers and times. Generate files with all data, one file with all data. Files with polygons. Place python scripts in git repos</td>
+  </tr>
+    <tr>
+	<td class="data">3</td>
+	<td class="data">Get stakeholder working locally</td>
+	<td class="data" style="border-right:1px solid black;">Speak with Thang to set up and figure out what caused it.</td>
   </tr>
 </table>
 
