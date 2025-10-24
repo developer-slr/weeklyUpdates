@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<style>
+
+*
+{
+  margin:0;
+  padding:0;
+}
+
+li {
+margin-left:20px;
+font-size: 12pt;
+}
+
+th, td {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align:left;
+	height:30px;
+	font-size: 12pt;
+	font-weight:Bold;
+	padding-left:3px;
+}
+a{text-decoration:none;color:#3C543C;}
+a:link   {color:#3C543C;}
+a:visited {color:#3C543C;}
+a:hover   {color:#D6F097;}
+a:active  {color:#D6F097;}
+
+.site-header__logo svg {
+    display: block;
+    width: auto;
+    height: 2rem;
+	color:#3C543C;
+}
+
+table{
+	margin:4px;
+}
+
+table.noborder{
+  border-top: 0px solid white;
+}
+
+td.noborder{
+	border-top: 0px solid white;
+	border-left: 0px solid white;
+	border-bottom: 0px solid white;
+}
+
+.darkGreen {
+  background:#273327;
+  color:Black;
+  font-size: 10pt;
+  color:white;
+}
+
+.lightGrHeader {
+  background:#D7F39D;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.lightGreen {
+  background:#D6F097;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.data {
+  font-weight:normal;
+  font-size: 12pt;
+  height:20px;
+  border-top:0px;
+}
+
+.spacer {
+	height:20px;
+}
+
+font {
+  font-family:Century Gothic;
+}
+
+p {
+	font-weight:normal;
+}
+
+body {
+  padding-right:30px;
+  padding-bottom: 0px;
+  scroll-behavior:smooth;
+}
+
+code {
+  background-color: black;
+  color:lime;
+  font-size: 16pt;
+  font-family: Agency FB;
+}
+
+::-webkit-scrollbar
+{
+  width:20px;
+}
+
+::-webkit-scrollbar-track{
+  background:linear-gradient(to left,white 10px,black 11px,white 1q);
+}
+
+::-webkit-scrollbar-thumb{
+  background:white;
+  border:inset 1px black;
+}
+
+</style>
+
+</head>
+<body>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <th class="darkGreen">Project Name</th>
+	<th class="lightBlue">Digital Services &amp; AI</th>
+	<th class="darkGreen">Line Manager</th>
+	<th class="lightBlue">Matt Daw</th>
+	<th class="darkGreen">Report Date</th>
+	<th class="lightBlue" style="border-right:1px solid black;">22 Oct 2025</th>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Mikes Activities: 13 Oct 25 - 22 Oct 25</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+ <tr>
+    <td class="data">1</td>
+	<td class="data">RPM Automation</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+		<ul>
+			<li>Adjusted the RPM-Sharepoint flow to accomodate the list trigger. Tested with success if Project Manager and Project Director are provided.</li>
+			<li>Adjusted to accomodate existing entries and turned on the RPM Proposal create item flow and rerun 40+ failed attempts.</li>
+		</ul>
+		<br>
+		<p>Useful Links:</p>
+		<ul>
+      <li><a target="_blank" href="https://make.powerautomate.com/environments/Default-109cec53-a877-42eb-93e8-b9f5c282ba38/flows/shared/9723266b-d13e-4f41-b3e7-21eb27aba400?v3=true">Power Automate - RPM Proposal create item</a></li>
+      <li><a target="_blank" href="https://slrgroup.sharepoint.com/sites/RPMAdvisory/SitePages/Home.aspx">RPM Advisory site</a></li>
+			<li><a target="_blank" href="https://slrgroup.sharepoint.com/:w:/r/sites/OrchestryWorkingGroup/_layouts/15/Doc.aspx?sourcedoc=%7B99D8A766-94B9-4515-AFB3-5A1469DEBA72%7D&file=202406_API_Investigation.docx&action=default&mobileredirect=true">202406_API_Investigation</a> </li>
+      <li><a target="_blank" href="https://slrgroup.sharepoint.com/:p:/s/OrchestryWorkingGroup/EX8gkF2LELFKu59tLOq821gBa55YylPQSHhpeLq97lslew?e=Cdrp7n&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1756292324258&web=1&previoussessionid=7fa8262c-a820-9e7d-e80b-d20e9fa26dec">202508_RPM_Orchestry_API.pptx - (GUIDs required)</a> </li>
+      <li><a target="_blank" href="https://medium.com/@hadimahmood777/sharepoint-essentials-getting-to-know-your-lists-column-guid-a7b46bdf7596">Extract GUID from sharepoint list column</a> </li>
+		</ul>
+		<br>
+	</td>
+ </tr>
+
+    <tr>
+	<td class="data">2</td>
+	<td class="data">SLR Client Portal</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Created database from scripts in each solution</li>
+		<li>Update the auth.Clients table with the localhost URL</li>
+		<li>Download the code from each solution from upgrade-net8 branch and ran npm install in clientapp</li>
+		<li>Got familiar with <a target="_blank" href="https://wapp-dev-slrportal-b4si.azurewebsites.net/">dev</a> front end</li>
+		<li>Steps to launch portal on local machine
+			<ul>
+				<li>Download the repos from devops - locate upgrade-net8 branch and clone to prefered IDE
+					<ul>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/auth-server">Auth Server</a></li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/slr-admin-portal">SLR Admin Portal</a> </li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/b4si">b4si</a> </li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/b4si-admin-portal">b4si-admin-portal</a> </li>
+					</ul>
+				</li>
+				<li>Preparing the auth-server:
+					<ul>
+						<li>Launch Auth Server and ensure you are on the upgrade-net8 branch</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the default connection string to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Ensure the JWT -> Authority is https://localhost:5005</li>
+						<li>Run it</li>
+					</ul>
+				</li>
+				<li>Preparing the slr-admin-portal:
+					<ul>
+						<li>Launch slr-portal and ensure you are in the upgrade-net8 branch</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and SLR connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Change the ApplicationInfo -> Client ID to 3935F4F4-31C3-43BF-A7AB-1021C6A5A418 (This should match the ID in auth.Clients in your SQL database for the SlrAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to slr-admin-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3001</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to yokLGrnqRUToy6kYNe_WyY3d0WEzXaUK-G2M8h4xtKGfPIYRTKPZvX93D6IgoyqZxfvjeyXDJGUfZqskBTwSq-j-cy3X0xDGe8pL-FUavvuV2BkNdPWKWxqoy0PKW0GaaT3wUQOQNQmxKTgryHIeT-n_97lmZNx4K2p5z6bhIpj6ZltQ4O5FWGswtUM0wWk7Svw_Tk9Br6W4OlEcudXPA99swy7JW0BmKgKgnTbt9V7hhUx22BiQE19XGlFB5mKxRz1CaePuv3b9EuO16Ym_Dg60Ex4RtNpbu6nlKDFXffgCH09Tj8bmDO_Dk7PMJHe9f5UULZekRBz7DeJg09I2_w (Ask Tuan how we got the public key)</li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> UserRegistration to https://localhost:5005/api/users/</li>
+						<li>Change the Services -> ClientChangeNotification to https://localhost:7250/api/clients/changes</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+						<li>Run npm install in the ClientApp folder</li>
+					</ul>
+				</li>
+				<li>Preparing the b4si-admin-portal
+					<ul>
+						<li>Launch the B4SiPortal solution and ensure you are in the upgrade-net8 branch</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and B4SIAdmin connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Change the ApplicationInfo -> Client ID to D46EEC3A-C8D1-4E9F-B6A3-9C0B933117F2 (This should match the ID in auth.Clients in your SQL database for the B4siAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to b4si-admin-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3003</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to yokLGrnqRUToy6kYNe_WyY3d0WEzXaUK-G2M8h4xtKGfPIYRTKPZvX93D6IgoyqZxfvjeyXDJGUfZqskBTwSq-j-cy3X0xDGe8pL-FUavvuV2BkNdPWKWxqoy0PKW0GaaT3wUQOQNQmxKTgryHIeT-n_97lmZNx4K2p5z6bhIpj6ZltQ4O5FWGswtUM0wWk7Svw_Tk9Br6W4OlEcudXPA99swy7JW0BmKgKgnTbt9V7hhUx22BiQE19XGlFB5mKxRz1CaePuv3b9EuO16Ym_Dg60Ex4RtNpbu6nlKDFXffgCH09Tj8bmDO_Dk7PMJHe9f5UULZekRBz7DeJg09I2_w (Ask Tuan how we got the public key)</li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> Submission to https://localhost:7250/api/submissions/</li>
+						<li>Change the Services -> Benchmarking to https://localhost:7250/api/benchmarking</li>
+						<li>Add http://localhost:3003 to the AllowedClient -> ClientUri to overcome CORS error</li>
+						<li>Remark out line 29 in ClientApp\src\pages\index.tsx</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+						<li>Run npm install in the ClientApp folder</li>
+						<li>In the case of a message box showing when the b4si client portal is running I was able to resolve the issue by removing the privateregistry.bin file from C:\Users\{username}\AppData\Local\Microsoft\VisualStudio\{version}</li>
+					</ul>
+				</li>
+				<li>Preparing the b4si client portal
+					<ul>
+						<li>Launch the B4SiPortal solution and ensure you are in the upgrade-net8 branch</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and B4SIAdmin connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Add the EmailServerConfiguration data -See Mike</li>
+						<li>Change the ApplicationInfo -> ClientId to 74E67456-C2FF-4C41-B1EB-DEA85FA8E618 (This should match the ID in auth.Clients in your SQL database for the B4siAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to b4si-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3000</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to yokLGrnqRUToy6kYNe_WyY3d0WEzXaUK-G2M8h4xtKGfPIYRTKPZvX93D6IgoyqZxfvjeyXDJGUfZqskBTwSq-j-cy3X0xDGe8pL-FUavvuV2BkNdPWKWxqoy0PKW0GaaT3wUQOQNQmxKTgryHIeT-n_97lmZNx4K2p5z6bhIpj6ZltQ4O5FWGswtUM0wWk7Svw_Tk9Br6W4OlEcudXPA99swy7JW0BmKgKgnTbt9V7hhUx22BiQE19XGlFB5mKxRz1CaePuv3b9EuO16Ym_Dg60Ex4RtNpbu6nlKDFXffgCH09Tj8bmDO_Dk7PMJHe9f5UULZekRBz7DeJg09I2_w (Ask Tuan how we got the public key)</li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> Currency to https://localhost:7251/api/currencies/</li>
+						<li>Change the Services -> Country to https://localhost:7251/api/countries/</li>
+						<li>Change the Services -> Client to https://localhost:7251/api/clients/</li>
+						<li>Change the Services -> User to https://localhost:7251/api/users/</li>
+						<li>Change the Services -> Document to https://localhost:7225/api/documents/</li>
+						<li>Add http://localhost:3000 to the AllowedClient -> ClientUri to overcome CORS error</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+						<li>Run npm install in the ClientApp folder</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_wiki/wikis/SLR-Client-Portal.wiki/64/-v2-System-architecture">Wiki</a></li>
+			<li><a target="_blank" href="https://wapp-dev-slrportal-b4si.azurewebsites.net/">https://wapp-dev-slrportal-b4si.azurewebsites.net/</a> </li>
+			<li><a target="_blank" href="https://jwt.ms/">Read bearer token</a></li>
+	</td>
+  </tr>
+
+  <tr>
+	<td class="data">3</td>
+	<td class="data">Other</td>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Found cause for failed ADf pipeline in workday where 2 deltek_ids were returned for user 107501 due to a suspected transfer of region</li>
+		<li>Updated the connection for emails in USB Unblocking find Upcoming termination records and Find Expired Records</li>
+		<li>Updated the URL in the find upcoming termination records to:https://default109cec53a87742eb93e8b9f5c282ba.38.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/e9ea2e70d58d4eada22473461e698e09/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=b2MYeJ0Y4rdDlBAjA2iVlmFr3zTdSzB_cY0ivuYQQls</li>
+		<li>Imported USB Unblocking data into local SQL, removed the duplicate records and queried anything that had expired up to 21 Oct 25 and exported it to excel in response to Adam Prior's email</li>
+		<li>Investigated failed workday pipeline in ADF to isolate duplicate deltek_id record - employee 106944</li>
+		<li>Fixed truncation issue on workday functions by increasing the length of the parameters</li>
+	    </ul><br>
+      <p>Useful Links:</p>
+      <ul>
+        <li></li>
+      </ul>
+	</td>
+  </tr>
+ <tr>
+  
+  
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=5 style="text-align:center; border-right:1px solid black;" >Training</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader" width="20%">Task</td>
+	<td class="lightGrHeader" width="20%">Course</td>
+	<td class="lightGrHeader">Date</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+ <tr>
+    <td class="data">1</td>
+	<td class="data"><a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2PjDI">Microsoft Training</a> - on m**********##@outlook.com account</td>
+	<td class="data"><a target="_blank" href="https://learn.microsoft.com/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification&WT.mc_id=certposter_poster-wwl">Microsoft Azure Fundamentals</a><br>
+	<a target="_blank" href="https://aka.ms/AZ900-StudyGuide">AZ-900 study guide</a><br>
+	<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-900/practice/assessment?assessmentId=23&assessment-type=practice">AZ-900 practice test</a><br>
+	<a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/tools/sharepoint-samples">AI Foundry</a> </td>
+	<td class="data">30 Jan 2025</td>
+	<td class="data" style="border-right:1px solid black;">
+	<ul><li>Continued the training</li>
+	</ul></td>
+  </tr>
+  <tr>
+    <td class="data">2</td>
+	<td class="data">AI training with <A target="_blank" href="https://www.youtube.com/watch?v=lSwMtsm6oDU" >Productive Dude</A> and <a target="_blank" href="https://www.udemy.com/course/the-ai-engineer-course-complete-ai-engineer-bootcamp/learn/lecture/45515077#overview">Udemy</a> </td>
+	<td class="data"></td>
+	<td class="data">24 Jul 2025</td>
+	<td class="data" style="border-right:1px solid black;">
+	<ul><li>Continued the training - Setup n8n from <a target="_blank" href="https://docs.n8n.io/hosting/installation/docker/#starting-n8n">docker</a> with `docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n` then run from <a target="_blank" href="http://localhost:5678">http://localhost:5678</a> </li>
+	</ul></td>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=3 style="text-align:center; border-right:1px solid black;" >Work Pending</td>
+  </tr>
+  <tr>
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+  <tr>
+	<td class="data">1</td>
+	<td class="data">Continue AI training</td>
+	<td class="data" style="border-right:1px solid black;">Continue with the <a target="_blank" href="https://www.youtube.com/watch?v=y_cpFMF1pzk&list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI&index=2">n8n training</a></td>
+  </tr>
+  <tr>
+	<td class="data">2</td>
+	<td class="data">GIS - Flood Modelling</td>
+	<td class="data" style="border-right:1px solid black;">Continue exploring the leaflet setup to show the temporal data. Investigate layers and times. Generate files with all data, one file with all data. Files with polygons. Place python scripts in git repos</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=6 style="text-align:center; border-right:1px solid black;" >Mikes Performance Objectives</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader">No.</td>
+	<td class="lightGrHeader">Task</td>
+	<td class="lightGrHeader" width="70px">Start</td>
+	<td class="lightGrHeader" width="70px">End</td>
+	<td class="lightGrHeader">Progress</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Comments</td>
+  </tr>
+  <tr>
+    <td class="data">1</td>
+	<td class="data">TBA</td>
+	<td class="data"></td>
+	<td class="data"></td>
+	<td class="data"></td>
+	<td class="data" style="border-right:1px solid black">
+		TBA</td>
+  </tr>
+
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=2 style="text-align:center; border-right:1px solid black;" >USB Unblocking Quick Reference</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader" width="150px">Item</td>
+	<td class="lightGrHeader" style="border-right:1px solid black;">Notes</td>
+  </tr>
+  <tr>
+    <td class="data">Sharepoint List</td>
+	<td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://slrgroup.sharepoint.com/sites/ITServiceDelivery/Lists/USB%20Unblocking%20Results/AllItems.aspx">ICT Service Delivery Sharepoint List</a></td>
+  </tr>
+  <tr>
+    <td class="data">Power BI</td>
+	<td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://app.powerbi.com/groups/c9b9cbe7-6598-4dc6-879d-1394e8883487/reports/02e57a9a-bb09-47f1-8980-ece866dd39dc/da0d6992f723e052afe0?experience=power-bi">USB Unblocking </a> </td>
+  </tr>
+  <tr>
+    <td class="data">Group Membership</td>
+	<td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Faad.portal.azure.com%2F%23view%2FMicrosoft_AAD_IAM%2FGroupDetailsMenuBlade%2F~%2FMembers%2FgroupId%2F5b039e07-6d7b-4874-b380-6e1f8a836057%2FmenuId%2F&data=05%7C02%7CMichael.Harley%40slrconsulting.com%7C2df6a83b93f14c7223ad08ddc7e99562%7C109cec53a87742eb93e8b9f5c282ba38%7C0%7C0%7C638886528222455490%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=G1LbunBO%2BgghLJKl%2F1k6%2BwWTw3hhM4hUkfo6%2BHybhVs%3D&reserved=0">Allow USB Mass Storage devices Group</a> </td>
+  </tr>
+    <tr>
+    <td class="data">Power Apps</td>
+	<td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://make.powerapps.com/environments/default-109cec53-a877-42eb-93e8-b9f5c282ba38/solutions/09b02ff5-dc3d-ef11-8409-000d3ad9c548/objects/cloudflows?utm_source=office&utm_medium=app_launcher&utm_campaign=office_referrals">USB Unblocking Cloud Flows</a> </td>
+  </tr>
+
+  
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <th class="darkBlue">Quick Links</th>
+	<th class="lightBlue"><a target="_blank" href="https://slrgroup.sharepoint.com/sites/DigitalServicesTeam">Digital Services &amp; AI</a><br>
+	<a target="_blank" href="https://myaccount.microsoft.com/">My Account</a> / <a target="_blank" href="https://myapps.microsoft.com/">My Apps</a><br>
+	<a target="_blank" href="https://slrgroup-my.sharepoint.com/">OneDrive</a><br>
+	<a target="_blank" href="https://slrgroup.sharepoint.com/sites/connect-tm-pulse">Pulse</a> <br>
+	<a target="_blank" href="https://dev.azure.com/slr-consulting/Digital%20Services/_boards/board/t/Digital%20Services/Stories">Story Board</a></th>
+	<th class="lightBlue"><a target="_blank" href="https://slrconsulting.csod.com/samldefault.aspx">The POD (Training)</a><br>
+	<a target="_blank" href="https://wd103.myworkday.com/slrconsulting/d/home.htmld">Workday (Annual Leave)</a><br>
+	<a target="_blank" href="https://slrconsulting.deltekenterprise.com/slrconsulting/app/">Vantagepoint (Timesheets)</a></th>
+	<th class="lightBlue">
+	<a target="_blank" href="https://dev.azure.com/slr-consulting/">DevOps</a> / <a target="_blank" href="https://portal.azure.com/">Azure Portal</a><br>
+	<a target="_blank" href="https://developer-slr.github.io/weeklyUpdates/WeeklyUpdate.htm">Weekly Updates</a> </th>
+	<th class="lightBlue" style="border-right:1px solid black;"><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">Response Codes</a><BR>
+	<a target="_blank" href="https://nodejs.org/docs/latest/api/">Node.js</a><br>
+	<a target="_blank" href="https://expressjs.com/">Express</a><br>
+	<a target="_blank" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">gitflow</a></th>
+  </tr>
+</table>
+
+<br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

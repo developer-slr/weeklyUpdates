@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<style>
+
+*
+{
+  margin:0;
+  padding:0;
+}
+
+li {
+margin-left:20px;
+font-size: 12pt;
+}
+
+th, td {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align:left;
+	height:30px;
+	font-size: 12pt;
+	font-weight:Bold;
+	padding-left:3px;
+}
+a{text-decoration:none;color:#3C543C;}
+a:link   {color:#3C543C;}
+a:visited {color:#3C543C;}
+a:hover   {color:#D6F097;}
+a:active  {color:#D6F097;}
+
+.site-header__logo svg {
+    display: block;
+    width: auto;
+    height: 2rem;
+	color:#3C543C;
+}
+
+table{
+	margin:4px;
+}
+
+table.noborder{
+  border-top: 0px solid white;
+}
+
+td.noborder{
+	border-top: 0px solid white;
+	border-left: 0px solid white;
+	border-bottom: 0px solid white;
+}
+
+.darkGreen {
+  background:#273327;
+  color:Black;
+  font-size: 10pt;
+  color:white;
+}
+
+.lightGrHeader {
+  background:#D7F39D;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.lightGreen {
+  background:#D6F097;
+  color:Black;
+  height:20px;
+  font-size: 10pt;
+  font-weight:Bold;
+  text-align:center;
+  border-top:0px;
+}
+
+.data {
+  font-weight:normal;
+  font-size: 12pt;
+  height:20px;
+  border-top:0px;
+}
+
+.spacer {
+	height:20px;
+}
+
+font {
+  font-family:Century Gothic;
+}
+
+p {
+	font-weight:normal;
+}
+
+body {
+  padding-right:30px;
+  padding-bottom: 0px;
+  scroll-behavior:smooth;
+}
+
+code {
+  background-color: black;
+  color:lime;
+  font-size: 16pt;
+  font-family: Agency FB;
+}
+
+::-webkit-scrollbar
+{
+  width:20px;
+}
+
+::-webkit-scrollbar-track{
+  background:linear-gradient(to left,white 10px,black 11px,white 1q);
+}
+
+::-webkit-scrollbar-thumb{
+  background:white;
+  border:inset 1px black;
+}
+
+</style>
+
+</head>
+<body>
+
+    <table width="99%" cellpadding=0 cellspacing=0>
+    <tr>
+        <td class="darkGreen" style="text-align:center; border-right:1px solid black;" >Set up repos locally</td>
+    </tr>
+<tr>
+	<td class="data" style="border-right:1px solid black;"><br>
+	  <ul> 
+	  	<li>Created database from scripts in each solution, preferrably in SSMS</li>
+		<li>Update the auth.Clients table with the localhost URL
+            <ul>
+                <li>AuthServer: https://localhost:5005/swagger/index.html</li>
+                <li>SlrAdminPortal: http://localhost:3001/login</li>
+                <li>B4siAdminPortal: http://localhost:3003</li>
+                <li>B4siClientPortal: http://localhost:3003</li>
+            </ul>
+        </li>
+		<li>Download the code from each solution from the upgrade-net8 branch and run git pull to ensure you have the latest code</li>
+
+		<li>Steps to launch portal on local machine
+			<ul>
+				<li>Download the repos from devops - locate upgrade-net8 branch and clone to prefered IDE
+					<ul>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/auth-server">Auth Server</a></li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/slr-admin-portal">SLR Admin Portal</a> </li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/b4si">b4si</a> </li>
+						<li><a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_git/b4si-admin-portal">b4si-admin-portal</a> </li>
+					</ul>
+				</li>
+				<li><b>Preparing the auth-server:</b>
+					<ul>
+						<li>Launch Auth Server and ensure you are on the upgrade-net8 branch :> git pull</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the default connection string to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Ensure the JWT -> Authority is https://localhost:5005</li>
+                        <li>Add the JWT -> PrivateKey to <a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_wiki/wikis/SLR-Client-Portal.wiki/497/-v2-Systems-overall?anchor=rsa-key-pair-generation" >[Your Private Key]</a></li></li>
+                        <li>Launch the terminal and navigate to the project \AuthServer.API</li>
+						<li>Run it:> dotnet run</li>
+					</ul>
+				</li>
+				<li><b>Preparing the slr-admin-portal:</b>
+					<ul>
+						<li>Launch slr-portal and ensure you are in the upgrade-net8 branch :> git pull</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and SLR connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Change the ApplicationInfo -> Client ID to 3935F4F4-31C3-43BF-A7AB-1021C6A5A418 (This should match the ID in auth.Clients in your SQL database for the SlrAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to slr-admin-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3001</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to <a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_wiki/wikis/SLR-Client-Portal.wiki/497/-v2-Systems-overall?anchor=rsa-key-pair-generation" >[Your Public Key]</a></li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> UserRegistration to https://localhost:5005/api/users/</li>
+						<li>Change the Services -> ClientChangeNotification to https://localhost:7250/api/clients/changes</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+                        <li>Navigate to the client project \SlrPortal\ClientApp</li>
+                        <li>Run :> npm install</li>
+                        <li>Navigate to the server project \SlrPortal</li>
+						<li>Run :> dotnet run</li>
+					</ul>
+				</li>
+				<li><b>Preparing the b4si-admin-portal</b>
+					<ul>
+						<li>Launch the B4SiPortal solution and ensure you are in the upgrade-net8 branch :> git pull</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and B4SIAdmin connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Change the ApplicationInfo -> Client ID to D46EEC3A-C8D1-4E9F-B6A3-9C0B933117F2 (This should match the ID in auth.Clients in your SQL database for the B4siAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to b4si-admin-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3003</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to <a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_wiki/wikis/SLR-Client-Portal.wiki/497/-v2-Systems-overall?anchor=rsa-key-pair-generation" >[Your Public Key]</a></li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> Submission to https://localhost:7250/api/submissions/</li>
+						<li>Change the Services -> Benchmarking to https://localhost:7250/api/benchmarking</li>
+						<li>Add http://localhost:3003 to the AllowedClient -> ClientUri to overcome CORS error</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+						<li>Navigate to the client project \B4siPortal\ClientApp</li>
+                        <li>Run :> npm install</li>
+                        <li>Navigate to the server project \B4siPortal</li>
+						<li>Run :> dotnet run</li>
+						<li>NOTE: If using Visual Studio - In the case of a message box showing when the b4si client portal is running I was able to resolve the issue by removing the privateregistry.bin file from C:\Users\{username}\AppData\Local\Microsoft\VisualStudio\{version}</li>
+					</ul>
+				</li>
+
+				<li><b>Preparing the b4si client portal</b>
+					<ul>
+						<li>Launch the B4SiPortal solution and ensure you are in the upgrade-net8 branch :> git pull</li>
+						<li>Make a copy of the appsettings.json file and name it appsettings.Development.json</li>
+						<li>Edit the new json file adding the B4SI and B4SIAdmin connection strings both to your new database. eg:Server=(local);Database=SLRClientPortal;Trusted_Connection=True;TrustServerCertificate=true</li>
+						<li>Add the EmailServerConfiguration data -See Mike</li>
+						<li>Change the ApplicationInfo -> ClientId to 74E67456-C2FF-4C41-B1EB-DEA85FA8E618 (This should match the ID in auth.Clients in your SQL database for the B4siAdminPortal)</li>
+						<li>Change the ApplicationInfo -> ClientSecret to b4si-portal-secret as can be found in auth.clients in SQL</li>
+						<li>Change the ApplicationInfo -> FrontEndURL to http://localhost:3000</li>
+						<li>Change the ApplicationInfo -> Authority to https://localhost:5005</li>
+						<li>Change the ApplicationInfo -> PublicKey to <a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal/_wiki/wikis/SLR-Client-Portal.wiki/497/-v2-Systems-overall?anchor=rsa-key-pair-generation" >[Your Public Key]</a></li>
+						<li>Change the Services -> Auth to https://localhost:5005/api/auth/</li>
+						<li>Change the Services -> Currency to https://localhost:7251/api/currencies/</li>
+						<li>Change the Services -> Country to https://localhost:7251/api/countries/</li>
+						<li>Change the Services -> Client to https://localhost:7251/api/clients/</li>
+						<li>Change the Services -> User to https://localhost:7251/api/users/</li>
+						<li>Change the Services -> Document to https://localhost:7225/api/documents/</li>
+						<li>Add http://localhost:3000 to the AllowedClient -> ClientUri to overcome CORS error</li>
+						<li>Check there is no lock file in ClientApp\Src for the package.json (package-lock.json)</li>
+						<li>Navigate to the client project \B4SI\ClientApp</li>
+                        <li>Run :> npm install</li>
+                        <li>Navigate to the server project \B4SI</li>
+						<li>Run :> dotnet run</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+	    </ul><br>
+		<p>Useful Links:</p>
+		<ul>
+			<li><a target="_blank" href="https://jwt.ms/">Read bearer token</a></li>
+	</td>
+  </tr>
+
+    </table>
+
+    <br>
+    <p>&nbsp;<a target="_blank" href="https://dev.azure.com/slr-consulting/SLR%20Client%20Portal">DEVOPS</a></p>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=4 style="text-align:center; border-right:1px solid black;" >B4SI As-Live Quick Reference</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader" width="150px">Item</td>
+	<td class="lightGrHeader">Resource Group</td>
+    <td class="lightGrHeader">Web App</td>
+    <td class="lightGrHeader" style="border-right:1px solid black;">URL</td>
+  </tr>
+  <tr>
+    <td class="data">SLR Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-admin-rg/overview">PROD-portal-admin-RG</a></td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-admin-rg/providers/Microsoft.Web/sites/wapp-prod-portal-admin/slots/as-live/appServices" >wapp-prod-portal-admin/as-live</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-admin-as-live.azurewebsites.net" >wapp-prod-portal-admin-as-live.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/overview">PROD-portal-b4si-RG </a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/providers/Microsoft.Web/sites/wapp-prod-portal-b4si-admin/slots/as-live/appServices">wapp-prod-portal-b4si-admin/as-live</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-b4si-admin-as-live.azurewebsites.net">wapp-prod-portal-b4si-admin-as-live.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Client Web App</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/overview">PROD-portal-b4si-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/providers/Microsoft.Web/sites/wapp-prod-portal-b4si/slots/as-live/appServices" >wapp-prod-portal-b4si/as-live</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-b4si-as-live.azurewebsites.net" >wapp-prod-portal-b4si-as-live.azurewebsites.net</a></td>
+
+  </tr>
+    <tr>
+    <td class="data">Auth Server</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-auth-RG/overview">PROD-portal-auth-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-auth-rg/providers/Microsoft.Web/sites/wapp-prod-portal-auth/slots/as-live/appServices" >wapp-prod-portal-auth/as-live</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-auth-as-live.azurewebsites.net" >wapp-prod-portal-auth-as-live.azurewebsites.net</a></td>
+  </tr>
+</table>
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=4 style="text-align:center; border-right:1px solid black;" >B4SI PROD Quick Reference</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader" width="150px">Item</td>
+	<td class="lightGrHeader">Resource Group</td>
+    <td class="lightGrHeader">Web App</td>
+    <td class="lightGrHeader" style="border-right:1px solid black;">URL</td>
+  </tr>
+  <tr>
+    <td class="data">SLR Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-admin-rg/overview">PROD-portal-admin-RG</a></td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-admin-RG/providers/Microsoft.Web/sites/wapp-prod-portal-admin/appServices" >wapp-prod-portal-admin</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-admin.azurewebsites.net" >wapp-prod-portal-admin.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/overview">PROD-portal-b4si-RG </a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-b4si-RG/providers/Microsoft.Web/sites/wapp-prod-portal-b4si-admin/appServices">wapp-prod-portal-b4si-admin</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-b4si-admin.azurewebsites.net">wapp-prod-portal-b4si-admin.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Client Web App</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/prod-portal-b4si-rg/overview">PROD-portal-b4si-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-b4si-RG/providers/Microsoft.Web/sites/wapp-prod-portal-b4si/appServices" >wapp-prod-portal-b4si</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-b4si.azurewebsites.net" >wapp-prod-portal-b4si.azurewebsites.net</a></td>
+
+  </tr>
+    <tr>
+    <td class="data">Auth Server</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-auth-RG/overview">PROD-portal-auth-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/8a518016-451f-4ddd-b2ae-d3855d72428e/resourceGroups/PROD-portal-auth-RG/providers/Microsoft.Web/sites/wapp-prod-portal-auth/appServices" >wapp-prod-portal-auth</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-prod-portal-auth.azurewebsites.net" >wapp-prod-portal-auth.azurewebsites.net</a></td>
+  </tr>
+</table>
+
+
+<br>
+
+<table width="99%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td class="darkGreen" colspan=4 style="text-align:center; border-right:1px solid black;" >B4SI DEV Quick Reference</td>
+  </tr>
+  <tr >
+    <td class="lightGrHeader" width="150px">Item</td>
+	<td class="lightGrHeader">Resource Group</td>
+    <td class="lightGrHeader">Web App</td>
+    <td class="lightGrHeader" style="border-right:1px solid black;">URL</td>
+  </tr>
+  <tr>
+    <td class="data">SLR Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/dev-slrportal-admin-rg/overview">DEV-slrportal-admin-RG</a></td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/dev-slrportal-admin-rg/providers/Microsoft.Web/sites/wapp-dev-slrportal-admin/appServices" >wapp-dev-slrportal-admin</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-dev-slrportal-admin.azurewebsites.net" >wapp-dev-slrportal-admin.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Admin Web Portal</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/DEV-SLRPortal-B4SI-RG/overview">DEV-slrportal-b4si-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/DEV-SLRPortal-B4SI-RG/providers/Microsoft.Web/sites/dev-slrportal-b4si-admin/appServices">dev-slrportal-b4si-admin</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://dev-slrportal-b4si-admin.azurewebsites.net">dev-slrportal-b4si-admin.azurewebsites.net</a></td>
+  </tr>
+  <tr>
+    <td class="data">B4SI Client Web App</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/DEV-SLRPortal-B4SI-RG/overview">DEV-slrportal-b4si-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/dev-slrportal-b4si-rg/providers/Microsoft.Web/sites/wapp-dev-slrportal-b4si/appServices" >wapp-dev-slrportal-b4si</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-dev-slrportal-b4si.azurewebsites.net" >wapp-dev-slrportal-b4si.azurewebsites.net</a></td>
+
+  </tr>
+    <tr>
+    <td class="data">Auth Server</td>
+	<td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/dev-slrportal-auth-rg/overview">DEV-slrportal-auth-RG</a> </td>
+    <td class="data"><a target="_blank" href="https://portal.azure.com/#@slrconsulting.com/resource/subscriptions/f40719af-b332-4d4d-9fa5-84d2e18bf519/resourceGroups/dev-slrportal-auth-rg/providers/Microsoft.Web/sites/wapp-dev-slrportal-auth/appServices" >wapp-dev-slrportal-auth</a></td>
+    <td class="data" style="border-right:1px solid black;"><a target="_blank" href="https://wapp-dev-slrportal-auth.azurewebsites.net" >wapp-dev-slrportal-auth.azurewebsites.net</a></td>
+  </tr>
+</table>
+
+<br>
+</body>
+</html>
